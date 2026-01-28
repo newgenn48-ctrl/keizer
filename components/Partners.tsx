@@ -114,7 +114,7 @@ export default function Partners() {
               key={`${partner.name}-${index}`}
               className="flex-shrink-0 mx-4 md:mx-8 lg:mx-10"
             >
-              <div className={`relative w-36 h-24 md:w-48 md:h-32 lg:w-56 lg:h-36 rounded-xl border p-4 hover:shadow-lg hover:scale-105 transition-all duration-300 select-none group ${
+              <div className={`relative w-40 h-28 md:w-52 md:h-36 lg:w-60 lg:h-40 rounded-xl border p-2 hover:shadow-lg hover:scale-105 transition-all duration-300 select-none group overflow-hidden ${
                   partner.darkBg
                     ? 'bg-secondary-800 border-secondary-700 hover:bg-secondary-700 hover:border-primary-500/50'
                     : 'bg-secondary-50 border-secondary-200 hover:bg-secondary-100 hover:border-primary-500/50'
@@ -123,7 +123,7 @@ export default function Partners() {
                   src={partner.logo}
                   alt={`${partner.name} - Partner van Keizer Logistics BV`}
                   fill
-                  className="object-contain p-2 opacity-90 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none"
+                  className="object-contain scale-110 opacity-90 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none"
                   sizes="(max-width: 768px) 144px, (max-width: 1024px) 192px, 224px"
                   draggable={false}
                 />
