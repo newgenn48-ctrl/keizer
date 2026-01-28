@@ -38,14 +38,14 @@ export default function Partners() {
           {[...partners, ...partners, ...partners].map((partner, index) => (
             <div
               key={`${partner.name}-${index}`}
-              className="flex-shrink-0 mx-8 md:mx-12 lg:mx-16"
+              className="flex-shrink-0 mx-6 md:mx-10 lg:mx-12"
             >
-              <div className="relative w-40 h-28 md:w-52 md:h-36 lg:w-64 lg:h-44 hover:scale-105 transition-all duration-300">
+              <div className="relative w-40 h-28 md:w-52 md:h-36 lg:w-64 lg:h-44 bg-secondary-100 rounded-xl p-4 shadow-sm hover:shadow-md hover:scale-105 transition-all duration-300">
                 <Image
                   src={partner.logo}
                   alt={`${partner.name} - Partner van Keizer Logistics BV`}
                   fill
-                  className="object-contain"
+                  className="object-contain p-3"
                   sizes="(max-width: 768px) 112px, (max-width: 1024px) 144px, 176px"
                 />
               </div>
