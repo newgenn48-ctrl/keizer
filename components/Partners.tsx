@@ -15,9 +15,6 @@ export default function Partners() {
     <section className="py-12 md:py-16 bg-white overflow-hidden">
       <div className="container-custom mb-8 md:mb-10">
         <div className="text-center">
-          <p className="text-primary-500 text-sm md:text-base uppercase tracking-widest mb-2 font-medium">
-            Vertrouwd door toonaangevende bedrijven
-          </p>
           <h2 className="text-2xl md:text-3xl font-bold text-secondary-900">
             Onze Partners
           </h2>
