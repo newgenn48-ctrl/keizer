@@ -41,27 +41,15 @@ export default function Hero() {
       {/* Content */}
       <div className="container-custom relative z-10">
         <div className="max-w-3xl">
-          {/* Badge */}
-          <div
-            className={`inline-flex items-center gap-2 px-3 md:px-4 py-1.5 md:py-2 rounded-full bg-white/10 backdrop-blur-sm border border-white/10 mb-6 md:mb-8 transition-all duration-700 ${loaded ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-4'}`}
-          >
-            <span className="relative flex h-2 w-2">
-              <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-primary-400 opacity-75" />
-              <span className="relative inline-flex rounded-full h-2 w-2 bg-primary-500" />
-            </span>
-            <span className="text-white/80 text-xs md:text-sm font-medium">Transport & Logistiek specialist</span>
-          </div>
-
           {/* Title */}
           <h1
             className={`text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-4 md:mb-6 leading-[1.1] transition-all duration-700 delay-100 ${loaded ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-4'}`}
           >
-            Betrouwbaar{' '}
             <span className="text-transparent bg-clip-text bg-gradient-to-r from-primary-400 to-primary-300">
-              transport
+              Keizer Logistics BV
             </span>
             <br />
-            door heel Europa
+            <span className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl">Uw betrouwbare transportpartner</span>
           </h1>
 
           {/* Description */}
