@@ -1,29 +1,51 @@
 'use client'
 
 import Link from 'next/link'
-import { useEffect, useState } from 'react'
+import { useEffect, useState, useRef } from 'react'
 
 export default function Hero() {
   const [loaded, setLoaded] = useState(false)
+  const [videoLoaded, setVideoLoaded] = useState(false)
+  const videoRef = useRef<HTMLVideoElement>(null)
 
   useEffect(() => {
     setLoaded(true)
+
+    // Lazy load video after initial content is visible
+    const timer = setTimeout(() => {
+      setVideoLoaded(true)
+    }, 100)
+
+    return () => clearTimeout(timer)
   }, [])
 
   return (
     <section className="relative min-h-[70vh] md:min-h-[80vh] flex items-center overflow-hidden bg-secondary-950 py-20 md:py-0">
-      {/* Video Background */}
+      {/* Video Background with lazy loading */}
       <div className="absolute inset-0">
-        <video
-          autoPlay
-          muted
-          loop
-          playsInline
-          poster="/images/keizer-hero.jpg"
-          className="w-full h-full object-cover"
-        >
-          <source src="/images/hero-bg.mp4" type="video/mp4" />
-        </video>
+        {/* Poster image shown while video loads */}
+        <div
+          className={`absolute inset-0 bg-cover bg-center transition-opacity duration-1000 ${videoLoaded ? 'opacity-0' : 'opacity-100'}`}
+          style={{ backgroundImage: 'url(/images/keizer-hero.jpg)' }}
+          aria-hidden="true"
+        />
+
+        {/* Lazy loaded video */}
+        {videoLoaded && (
+          <video
+            ref={videoRef}
+            autoPlay
+            muted
+            loop
+            playsInline
+            poster="/images/keizer-hero.jpg"
+            className="w-full h-full object-cover"
+            aria-label="Achtergrondvideo van transport en logistiek"
+          >
+            <source src="/images/hero-bg.mp4" type="video/mp4" />
+            Uw browser ondersteunt geen video.
+          </video>
+        )}
         {/* Overlay - subtle for 4K crisp look */}
         <div className="absolute inset-0 bg-secondary-950/40" />
         <div className="absolute inset-0 bg-gradient-to-r from-secondary-950/70 via-secondary-950/30 to-transparent" />

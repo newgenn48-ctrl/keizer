@@ -118,7 +118,7 @@ export default function AboutPage() {
               <div className="relative rounded-2xl overflow-hidden shadow-lg">
                 <Image
                   src="/images/bakwagen.jpg"
-                  alt="Keizer Logistics BV bakwagen"
+                  alt="Witte bakwagen van Keizer Logistics BV met bedrijfslogo, geparkeerd voor transport en distributie"
                   width={800}
                   height={695}
                   className="w-full h-auto"

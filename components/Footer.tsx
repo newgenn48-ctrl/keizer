@@ -46,7 +46,7 @@ export default function Footer() {
             <Link href="/" className="inline-block mb-5">
               <Image
                 src="/images/logo.png"
-                alt="Keizer Logistics BV"
+                alt="Keizer Logistics BV - Logo, terug naar homepage"
                 width={160}
                 height={45}
                 className="h-12 md:h-14 w-auto brightness-0 invert"
