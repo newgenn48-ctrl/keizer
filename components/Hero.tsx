@@ -54,7 +54,7 @@ export default function Hero() {
 
           {/* Description */}
           <p
-            className={`text-lg md:text-xl text-white/60 mb-8 md:mb-10 max-w-xl leading-relaxed transition-all duration-700 delay-200 ${loaded ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-4'}`}
+            className={`text-xl md:text-2xl text-white/60 mb-8 md:mb-10 max-w-xl leading-relaxed transition-all duration-700 delay-200 ${loaded ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-4'}`}
           >
             Uw partner voor efficiënt nationaal en internationaal transport.
             Van distributie tot spoedvervoer — wij leveren altijd op tijd.
