@@ -23,7 +23,7 @@ export default function Header() {
             <Link href="/" className="flex items-center group">
               <Image
                 src="/images/logo.png"
-                alt="Keizer Logistics"
+                alt="Keizer Logistics BV"
                 width={220}
                 height={60}
                 className="h-16 w-auto"

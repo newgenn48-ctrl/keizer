@@ -22,15 +22,15 @@
 
 @layer components {
   .btn-primary {
-    @apply inline-flex items-center justify-center px-7 py-4 text-base font-semibold text-secondary-900 bg-gradient-to-r from-primary-400 to-primary-500 rounded-full hover:from-primary-500 hover:to-primary-600 focus:outline-none focus:ring-2 focus:ring-primary-400 focus:ring-offset-2 transition-all duration-300 shadow-lg shadow-primary-400/20 hover:shadow-xl hover:shadow-primary-500/30 hover:-translate-y-0.5;
+    @apply inline-flex items-center justify-center px-5 py-2.5 text-sm font-semibold text-secondary-900 bg-gradient-to-r from-primary-400 to-primary-500 rounded-full hover:from-primary-500 hover:to-primary-600 focus:outline-none focus:ring-2 focus:ring-primary-400 focus:ring-offset-2 transition-all duration-300 shadow-lg shadow-primary-400/20 hover:shadow-xl hover:shadow-primary-500/30 hover:-translate-y-0.5;
   }
 
   .btn-secondary {
-    @apply inline-flex items-center justify-center px-7 py-4 text-base font-semibold text-secondary-700 bg-white border-2 border-secondary-200 rounded-full hover:bg-secondary-50 hover:border-primary-400 focus:outline-none focus:ring-2 focus:ring-primary-400 focus:ring-offset-2 transition-all duration-300;
+    @apply inline-flex items-center justify-center px-5 py-2.5 text-sm font-semibold text-secondary-700 bg-white border-2 border-secondary-200 rounded-full hover:bg-secondary-50 hover:border-primary-400 focus:outline-none focus:ring-2 focus:ring-primary-400 focus:ring-offset-2 transition-all duration-300;
   }
 
   .section-padding {
-    @apply py-16 md:py-20;
+    @apply py-8 md:py-12;
   }
 
   .container-custom {
@@ -54,7 +54,7 @@
   }
 
   .section-title {
-    @apply text-4xl md:text-5xl lg:text-6xl font-bold text-secondary-900 tracking-tight leading-[1.1];
+    @apply text-2xl md:text-3xl lg:text-4xl font-bold text-secondary-900 tracking-tight leading-[1.1];
   }
 
   .section-subtitle {
@@ -62,20 +62,76 @@
   }
 
   .badge {
-    @apply inline-flex items-center gap-2 px-4 py-2 bg-primary-50 text-primary-700 text-sm font-semibold rounded-full border border-primary-100;
+    @apply inline-flex items-center gap-2 px-3 py-1.5 bg-primary-50 text-primary-700 text-xs font-semibold rounded-full border border-primary-100;
   }
 
   .icon-box {
-    @apply w-14 h-14 bg-gradient-to-br from-primary-400 to-primary-500 rounded-2xl flex items-center justify-center text-secondary-900 shadow-lg shadow-primary-400/20;
+    @apply w-10 h-10 bg-gradient-to-br from-primary-400 to-primary-500 rounded-xl flex items-center justify-center text-secondary-900 shadow-lg shadow-primary-400/20;
   }
 
   .divider {
-    @apply w-20 h-1.5 bg-gradient-to-r from-primary-400 to-primary-500 rounded-full;
+    @apply w-14 h-1 bg-gradient-to-r from-primary-400 to-primary-500 rounded-full;
   }
 }
 
 @layer utilities {
   .text-balance {
     text-wrap: balance;
+  }
+
+  .perspective {
+    perspective: 1000px;
+  }
+
+  .rotate-3d {
+    animation: rotate3d 8s ease-in-out infinite;
+    transform-style: preserve-3d;
+  }
+
+  .rotate-3d-slow {
+    animation: rotate3d 12s ease-in-out infinite;
+    transform-style: preserve-3d;
+  }
+
+  .animate-blob {
+    animation: blob 7s infinite;
+  }
+
+  .animation-delay-2000 {
+    animation-delay: 2s;
+  }
+
+  .animation-delay-4000 {
+    animation-delay: 4s;
+  }
+}
+
+@keyframes rotate3d {
+  0%, 100% {
+    transform: rotateY(0deg);
+  }
+  25% {
+    transform: rotateY(15deg);
+  }
+  50% {
+    transform: rotateY(0deg);
+  }
+  75% {
+    transform: rotateY(-15deg);
+  }
+}
+
+@keyframes blob {
+  0%, 100% {
+    transform: translate(0, 0) scale(1);
+  }
+  25% {
+    transform: translate(20px, -30px) scale(1.1);
+  }
+  50% {
+    transform: translate(-20px, 20px) scale(0.9);
+  }
+  75% {
+    transform: translate(30px, 10px) scale(1.05);
   }
 }

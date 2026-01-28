@@ -19,7 +19,7 @@ const contactInfo = [
     content: ['Schietlood 14 D', '2495AN \'s-Gravenhage'],
     icon: (
       <svg
-        className="w-6 h-6"
+        className="w-5 h-5 md:w-6 md:h-6"
         fill="none"
         stroke="currentColor"
         viewBox="0 0 24 24"
@@ -46,7 +46,7 @@ const contactInfo = [
     href: 'tel:+31684903364',
     icon: (
       <svg
-        className="w-6 h-6"
+        className="w-5 h-5 md:w-6 md:h-6"
         fill="none"
         stroke="currentColor"
         viewBox="0 0 24 24"
@@ -67,7 +67,7 @@ const contactInfo = [
     href: 'mailto:Info@keizer-logistics.nl',
     icon: (
       <svg
-        className="w-6 h-6"
+        className="w-5 h-5 md:w-6 md:h-6"
         fill="none"
         stroke="currentColor"
         viewBox="0 0 24 24"
@@ -87,7 +87,7 @@ const contactInfo = [
     content: ['Ma - Vr: 07:00 - 18:00', 'Za - Zo: Gesloten', 'Spoed: 24/7 bereikbaar'],
     icon: (
       <svg
-        className="w-6 h-6"
+        className="w-5 h-5 md:w-6 md:h-6"
         fill="none"
         stroke="currentColor"
         viewBox="0 0 24 24"
@@ -113,16 +113,16 @@ export default function ContactPage() {
       />
 
       {/* Contact Section */}
-      <section className="section-padding">
+      <section className="py-16 md:py-24 bg-white">
         <div className="container-custom">
-          <div className="grid grid-cols-1 lg:grid-cols-3 gap-12">
+          <div className="grid grid-cols-1 lg:grid-cols-3 gap-8 lg:gap-12">
             {/* Contact Form */}
             <div className="lg:col-span-2">
-              <div className="bg-white rounded-2xl shadow-sm border border-secondary-100 p-8">
-                <h2 className="text-2xl font-bold text-secondary-900 mb-2">
+              <div className="bg-white rounded-2xl shadow-lg border border-secondary-100 p-6 md:p-8">
+                <h2 className="text-xl md:text-2xl font-bold text-secondary-900 mb-2">
                   Stuur ons een bericht
                 </h2>
-                <p className="text-secondary-600 mb-8">
+                <p className="text-secondary-600 text-sm md:text-base mb-6 md:mb-8">
                   Vul het onderstaande formulier in en wij nemen binnen 24 uur
                   contact met u op.
                 </p>
@@ -131,26 +131,26 @@ export default function ContactPage() {
             </div>
 
             {/* Contact Info */}
-            <div className="space-y-6">
+            <div className="space-y-4 md:space-y-6">
               {contactInfo.map((item, index) => (
                 <div
                   key={index}
-                  className="bg-secondary-50 rounded-xl p-6"
+                  className="bg-secondary-950 rounded-xl p-5 md:p-6"
                 >
                   <div className="flex items-start gap-4">
-                    <div className="w-12 h-12 bg-primary-100 rounded-lg flex items-center justify-center text-primary-600 flex-shrink-0">
+                    <div className="w-10 h-10 md:w-12 md:h-12 bg-primary-500/20 rounded-lg md:rounded-xl flex items-center justify-center text-primary-400 flex-shrink-0">
                       {item.icon}
                     </div>
                     <div>
-                      <h3 className="font-semibold text-secondary-900 mb-2">
+                      <h3 className="font-semibold text-white text-sm md:text-base mb-1 md:mb-2">
                         {item.title}
                       </h3>
                       {item.content.map((line, lineIndex) => (
-                        <p key={lineIndex} className="text-secondary-600">
+                        <p key={lineIndex} className="text-secondary-400 text-sm md:text-base">
                           {item.href && lineIndex === 0 ? (
                             <a
                               href={item.href}
-                              className="hover:text-primary-600 transition-colors"
+                              className="hover:text-primary-400 transition-colors"
                             >
                               {line}
                             </a>
@@ -165,17 +165,17 @@ export default function ContactPage() {
               ))}
 
               {/* Emergency Contact */}
-              <div className="bg-accent-500 rounded-xl p-6 text-white">
-                <h3 className="font-semibold text-lg mb-2">Spoedtransport?</h3>
-                <p className="text-white/90 mb-4">
+              <div className="bg-gradient-to-br from-primary-500 to-primary-600 rounded-xl p-5 md:p-6">
+                <h3 className="font-semibold text-secondary-900 text-base md:text-lg mb-2">Spoedtransport?</h3>
+                <p className="text-secondary-800/80 text-sm md:text-base mb-4">
                   Voor urgente transporten zijn wij 24/7 bereikbaar.
                 </p>
                 <a
                   href="tel:+31684903364"
-                  className="inline-flex items-center gap-2 bg-white text-accent-600 px-4 py-2 rounded-lg font-medium hover:bg-white/90 transition-colors"
+                  className="inline-flex items-center gap-2 bg-secondary-900 text-white px-4 py-2.5 rounded-full text-sm md:text-base font-medium hover:bg-secondary-800 transition-all hover:scale-105"
                 >
                   <svg
-                    className="w-5 h-5"
+                    className="w-4 h-4 md:w-5 md:h-5"
                     fill="none"
                     stroke="currentColor"
                     viewBox="0 0 24 24"
@@ -197,27 +197,45 @@ export default function ContactPage() {
       </section>
 
       {/* Map Section */}
-      <section className="bg-secondary-100">
-        <div className="container-custom py-8">
-          <div className="rounded-xl overflow-hidden shadow-lg">
+      <section className="bg-secondary-950 relative overflow-hidden">
+        {/* Wave top */}
+        <div className="absolute top-0 left-0 right-0 rotate-180">
+          <svg viewBox="0 0 1440 60" className="w-full h-auto fill-white">
+            <path d="M0,30 C480,60 960,0 1440,30 L1440,60 L0,60 Z" />
+          </svg>
+        </div>
+
+        <div className="container-custom py-16 md:py-20 pt-20 md:pt-24">
+          <div className="text-center mb-8">
+            <span className="inline-block px-3 md:px-4 py-1 md:py-1.5 rounded-full bg-white/10 text-primary-300 text-xs md:text-sm font-semibold mb-4">
+              Locatie
+            </span>
+            <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-white mb-2">
+              Vind ons hier
+            </h2>
+            <p className="text-secondary-400 text-sm md:text-base">
+              Schietlood 14 D, 2495AN 's-Gravenhage
+            </p>
+          </div>
+          <div className="rounded-2xl overflow-hidden shadow-2xl">
             <iframe
-              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2460.7!2d4.4791!3d51.9225!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zNTHCsDU1JzIxLjAiTiA0wrAyOCc0NC44IkU!5e0!3m2!1snl!2snl!4v1"
+              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2456.8!2d4.3!3d52.05!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47c5b7348d7d5555%3A0x0!2sSchietlood%2014%2C%202495%20AN%20Den%20Haag!5e0!3m2!1snl!2snl!4v1"
               width="100%"
               height="400"
               style={{ border: 0 }}
               allowFullScreen
               loading="lazy"
               referrerPolicy="no-referrer-when-downgrade"
-              title="Keizer Logistics locatie"
+              title="Keizer Logistics BV locatie - Schietlood 14 D, 2495AN 's-Gravenhage"
               className="w-full"
             />
           </div>
-          <div className="mt-4 text-center">
+          <div className="mt-6 text-center">
             <a
-              href="https://maps.google.com/?q=Schietlood+14+D,+2495AN+'s-Gravenhage"
+              href="https://www.google.com/maps/search/?api=1&query=Schietlood+14+D+2495AN+Den+Haag"
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-flex items-center gap-2 text-primary-600 hover:text-primary-700 font-medium"
+              className="inline-flex items-center gap-2 text-primary-400 hover:text-primary-300 text-sm md:text-base font-medium transition-colors"
             >
               Open in Google Maps
               <svg

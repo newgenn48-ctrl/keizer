@@ -1,9 +1,13 @@
+'use client'
+
+import { useEffect, useState, useRef } from 'react'
+
 const features = [
   {
     title: 'Betrouwbaar & Punctueel',
-    description: 'Met een leveringspercentage van 99% op tijd, kunt u rekenen op ons.',
+    description: 'Met een leveringspercentage van 99% op tijd kunt u op ons rekenen.',
     icon: (
-      <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+      <svg className="w-5 h-5 md:w-6 md:h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
       </svg>
     ),
@@ -12,25 +16,25 @@ const features = [
     title: 'Flexibel & Schaalbaar',
     description: 'Van een enkele zending tot structureel transport, wij passen ons aan.',
     icon: (
-      <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+      <svg className="w-5 h-5 md:w-6 md:h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 7v10c0 2.21 3.582 4 8 4s8-1.79 8-4V7M4 7c0 2.21 3.582 4 8 4s8-1.79 8-4M4 7c0-2.21 3.582-4 8-4s8 1.79 8 4" />
       </svg>
     ),
   },
   {
-    title: 'Ervaren Team',
-    description: 'Meer dan 5 jaar ervaring in transport en logistiek.',
+    title: '24/7 Bereikbaar',
+    description: 'Voor spoedtransport zijn wij dag en nacht beschikbaar.',
     icon: (
-      <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
-        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0z" />
+      <svg className="w-5 h-5 md:w-6 md:h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
       </svg>
     ),
   },
   {
     title: 'Modern Wagenpark',
-    description: 'Onderhouden en milieubewust wagenpark voor efficiënt transport.',
+    description: 'Goed onderhouden en milieubewust wagenpark voor efficiënt transport.',
     icon: (
-      <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+      <svg className="w-5 h-5 md:w-6 md:h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M8 7h12m0 0l-4-4m4 4l-4 4m0 6H4m0 0l4 4m-4-4l4-4" />
       </svg>
     ),
@@ -38,74 +42,80 @@ const features = [
 ]
 
 export default function WhyChooseUs() {
+  const [isVisible, setIsVisible] = useState(false)
+  const sectionRef = useRef<HTMLElement>(null)
+
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        if (entry.isIntersecting) {
+          setIsVisible(true)
+        }
+      },
+      { threshold: 0.1 }
+    )
+
+    if (sectionRef.current) {
+      observer.observe(sectionRef.current)
+    }
+
+    return () => observer.disconnect()
+  }, [])
+
   return (
-    <section className="section-padding bg-secondary-900 relative overflow-hidden">
-      {/* Background pattern */}
-      <div className="absolute inset-0 opacity-5">
-        <div className="absolute inset-0 bg-[linear-gradient(to_right,white_1px,transparent_1px),linear-gradient(to_bottom,white_1px,transparent_1px)] bg-[size:4rem_4rem]" />
+    <section ref={sectionRef} className="py-16 md:py-24 bg-secondary-950 relative overflow-hidden">
+      {/* Gradient blobs */}
+      <div className="absolute top-0 left-1/4 w-[300px] md:w-[500px] h-[300px] md:h-[500px] bg-primary-500/10 rounded-full blur-[120px]" />
+      <div className="absolute bottom-0 right-1/4 w-[250px] md:w-[400px] h-[250px] md:h-[400px] bg-primary-600/10 rounded-full blur-[100px]" />
+
+      {/* Wave decoration */}
+      <div className="absolute top-0 left-0 right-0 rotate-180">
+        <svg viewBox="0 0 1440 100" className="w-full h-auto fill-secondary-50">
+          <path d="M0,50 C360,100 720,0 1080,50 C1260,75 1380,50 1440,40 L1440,100 L0,100 Z" />
+        </svg>
       </div>
 
-      {/* Gradient orbs */}
-      <div className="absolute top-0 left-1/4 w-96 h-96 bg-primary-500/20 rounded-full blur-3xl" />
-      <div className="absolute bottom-0 right-1/4 w-96 h-96 bg-primary-400/10 rounded-full blur-3xl" />
+      <div className="container-custom relative pt-6 md:pt-8">
+        {/* Header */}
+        <div className={`text-center mb-10 md:mb-16 transition-all duration-700 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`}>
+          <span className="inline-block px-3 md:px-4 py-1 md:py-1.5 rounded-full bg-white/10 text-primary-300 text-xs md:text-sm font-semibold mb-4">
+            Waarom Keizer
+          </span>
+          <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-white mb-3 md:mb-4">
+            Waarom kiezen voor{' '}
+            <span className="text-transparent bg-clip-text bg-gradient-to-r from-primary-400 to-primary-300">
+              Keizer Logistics BV?
+            </span>
+          </h2>
+          <p className="text-secondary-400 text-base md:text-lg max-w-2xl mx-auto px-4">
+            Al meer dan 5 jaar de betrouwbare partner voor bedrijven die waarde hechten aan kwaliteit
+          </p>
+        </div>
 
-      <div className="container-custom relative">
-        <div className="grid lg:grid-cols-2 gap-16 items-center">
-          {/* Content */}
-          <div>
-            <div className="inline-flex items-center gap-2 px-4 py-2 bg-white/10 text-white/90 text-sm font-semibold rounded-full mb-6 border border-white/10">
-              <span className="w-2 h-2 rounded-full bg-primary-400" />
-              Waarom wij
+        {/* Features Grid */}
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 md:gap-6">
+          {features.map((feature, index) => (
+            <div
+              key={index}
+              className={`group relative bg-white/5 backdrop-blur-sm border border-white/10 rounded-xl md:rounded-2xl p-5 md:p-6 hover:bg-white/10 transition-all duration-500 hover:-translate-y-2 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`}
+              style={{ transitionDelay: `${index * 100}ms` }}
+            >
+              {/* Icon */}
+              <div className="w-10 h-10 md:w-12 md:h-12 rounded-lg md:rounded-xl bg-gradient-to-br from-primary-500 to-primary-600 flex items-center justify-center text-white mb-3 md:mb-4 group-hover:scale-110 transition-transform duration-300">
+                {feature.icon}
+              </div>
+
+              <h3 className="text-base md:text-lg font-bold text-white mb-2 group-hover:text-primary-300 transition-colors">
+                {feature.title}
+              </h3>
+              <p className="text-secondary-400 text-xs md:text-sm leading-relaxed">
+                {feature.description}
+              </p>
+
+              {/* Hover line */}
+              <div className="absolute bottom-0 left-5 right-5 md:left-6 md:right-6 h-0.5 bg-gradient-to-r from-transparent via-primary-500 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
             </div>
-
-            <h2 className="text-4xl md:text-5xl font-bold text-white mb-6 leading-tight">
-              Waarom kiezen voor
-              <span className="text-primary-400"> Keizer Logistics?</span>
-            </h2>
-
-            <div className="w-20 h-1.5 bg-gradient-to-r from-primary-400 to-primary-500 rounded-full mb-8" />
-
-            <p className="text-lg text-white/70 mb-8 leading-relaxed max-w-lg">
-              Al meer dan 5 jaar de betrouwbare partner voor bedrijven die waarde
-              hechten aan kwaliteit, flexibiliteit en service.
-            </p>
-
-            {/* Stats */}
-            <div className="flex gap-8">
-              <div>
-                <p className="text-4xl font-bold text-primary-400">99%</p>
-                <p className="text-white/60 text-sm">Op tijd geleverd</p>
-              </div>
-              <div>
-                <p className="text-4xl font-bold text-primary-400">500+</p>
-                <p className="text-white/60 text-sm">Tevreden klanten</p>
-              </div>
-              <div>
-                <p className="text-4xl font-bold text-primary-400">24/7</p>
-                <p className="text-white/60 text-sm">Beschikbaar</p>
-              </div>
-            </div>
-          </div>
-
-          {/* Features Grid */}
-          <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-            {features.map((feature, index) => (
-              <div
-                key={index}
-                className="group p-6 rounded-2xl bg-white/5 border border-white/10 hover:bg-white/10 hover:border-primary-400/30 transition-all duration-300"
-              >
-                <div className="w-12 h-12 bg-gradient-to-br from-primary-400 to-primary-500 rounded-xl flex items-center justify-center text-secondary-900 mb-4 group-hover:scale-110 transition-transform duration-300">
-                  {feature.icon}
-                </div>
-                <h3 className="text-lg font-bold text-white mb-2">
-                  {feature.title}
-                </h3>
-                <p className="text-white/60 text-sm leading-relaxed">
-                  {feature.description}
-                </p>
-              </div>
-            ))}
-          </div>
+          ))}
         </div>
       </div>
     </section>
