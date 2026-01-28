@@ -55,10 +55,11 @@ const values = [
 ]
 
 const stats = [
-  { value: '5+', label: 'Jaar ervaring' },
-  { value: '500+', label: 'Tevreden klanten' },
-  { value: '25+', label: 'Voertuigen' },
-  { value: '35', label: 'Medewerkers' },
+  { value: '18+', label: 'Bakwagens' },
+  { value: '50+', label: 'Bussen' },
+  { value: '15+', label: 'Vrachtwagens' },
+  { value: '15+', label: 'Elektrische auto\'s' },
+  { value: '1', label: 'Fiets' },
 ]
 
 export default function AboutPage() {
@@ -126,7 +127,7 @@ export default function AboutPage() {
               </div>
               {/* Stats */}
               <div className="bg-secondary-950 rounded-2xl p-6 md:p-8">
-                <div className="grid grid-cols-2 gap-4 md:gap-6">
+                <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-5 gap-4 md:gap-6">
                   {stats.map((stat, index) => (
                     <div key={index} className="text-center">
                       <p className="text-2xl sm:text-3xl md:text-4xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-primary-400 to-primary-300 mb-1">
@@ -197,34 +198,6 @@ export default function AboutPage() {
           <svg viewBox="0 0 1440 60" className="w-full h-auto fill-white">
             <path d="M0,30 C480,0 960,60 1440,30 L1440,60 L0,60 Z" />
           </svg>
-        </div>
-      </section>
-
-      {/* Team/Culture Section */}
-      <section className="py-16 md:py-24 bg-white">
-        <div className="container-custom">
-          <div className="max-w-4xl mx-auto text-center">
-            <span className="inline-block px-3 md:px-4 py-1 md:py-1.5 rounded-full bg-primary-100 text-primary-700 text-xs md:text-sm font-semibold mb-4">
-              Ons Team
-            </span>
-            <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-secondary-900 mb-6 leading-tight">
-              De mensen achter{' '}
-              <span className="text-transparent bg-clip-text bg-gradient-to-r from-primary-500 to-primary-600">
-                Keizer Logistics BV
-              </span>
-            </h2>
-            <p className="text-secondary-600 text-sm md:text-base lg:text-lg mb-4 leading-relaxed">
-              Achter Keizer Logistics BV staat een team van 35 gedreven professionals.
-              Van planners tot chauffeurs, van magazijnmedewerkers tot
-              klantenservice - iedereen draagt bij aan onze gezamenlijke missie:
-              uitstekende logistieke dienstverlening leveren.
-            </p>
-            <p className="text-secondary-600 text-sm md:text-base lg:text-lg leading-relaxed">
-              Wij investeren in onze mensen door continue training en
-              ontwikkelmogelijkheden. Want wij geloven dat tevreden medewerkers de
-              sleutel zijn tot tevreden klanten.
-            </p>
-          </div>
         </div>
       </section>
 
