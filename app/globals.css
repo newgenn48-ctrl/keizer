@@ -162,16 +162,12 @@
     transform: translateX(0);
   }
   100% {
-    transform: translateX(-33.333%);
+    transform: translateX(-25%);
   }
 }
 
 .animate-scroll {
-  animation: scroll 25s linear infinite;
-}
-
-.animate-scroll:hover {
-  animation-play-state: paused;
+  animation: scroll 20s linear infinite;
 }
 
 /* Hide scrollbar for draggable elements */
