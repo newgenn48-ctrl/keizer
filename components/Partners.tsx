@@ -40,7 +40,7 @@ export default function Partners() {
               key={`${partner.name}-${index}`}
               className="flex-shrink-0 mx-8 md:mx-12 lg:mx-16"
             >
-              <div className="relative w-28 h-20 md:w-36 md:h-24 lg:w-44 lg:h-28 hover:scale-105 transition-all duration-300">
+              <div className="relative w-40 h-28 md:w-52 md:h-36 lg:w-64 lg:h-44 hover:scale-105 transition-all duration-300">
                 <Image
                   src={partner.logo}
                   alt={`${partner.name} - Partner van Keizer Logistics BV`}
