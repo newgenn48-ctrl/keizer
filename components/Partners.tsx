@@ -4,11 +4,11 @@ import Image from 'next/image'
 import { useRef, useState, useEffect } from 'react'
 
 const partners = [
-  { name: 'Keizer Logistics', logo: '/images/partners/Keizer Logistics.png' },
-  { name: 'S&F Holding', logo: '/images/partners/S&F Holding.png' },
-  { name: 'Keizer Snack&Bar', logo: '/images/partners/Keizer Snack&Bar.png' },
-  { name: 'SKR Transport', logo: '/images/partners/SKR TRANSPORT.png' },
-  { name: 'Invicta Group BV', logo: '/images/partners/INVICTA GROUP BV.png' },
+  { name: 'Keizer Logistics', logo: '/images/partners/Keizer Logistics.png', darkBg: false },
+  { name: 'S&F Holding', logo: '/images/partners/S&F Holding.png', darkBg: false },
+  { name: 'Keizer Snack&Bar', logo: '/images/partners/Keizer Snack&Bar.png', darkBg: false },
+  { name: 'SKR Transport', logo: '/images/partners/SKR TRANSPORT.png', darkBg: false },
+  { name: 'Invicta Group BV', logo: '/images/partners/INVICTA GROUP BV.png', darkBg: true },
 ]
 
 export default function Partners() {
@@ -114,7 +114,11 @@ export default function Partners() {
               key={`${partner.name}-${index}`}
               className="flex-shrink-0 mx-4 md:mx-8 lg:mx-10"
             >
-              <div className="relative w-36 h-24 md:w-48 md:h-32 lg:w-56 lg:h-36 bg-secondary-50 rounded-xl border border-secondary-200 p-4 hover:bg-secondary-100 hover:border-primary-500/50 hover:shadow-lg hover:scale-105 transition-all duration-300 select-none group">
+              <div className={`relative w-36 h-24 md:w-48 md:h-32 lg:w-56 lg:h-36 rounded-xl border p-4 hover:shadow-lg hover:scale-105 transition-all duration-300 select-none group ${
+                  partner.darkBg
+                    ? 'bg-secondary-800 border-secondary-700 hover:bg-secondary-700 hover:border-primary-500/50'
+                    : 'bg-secondary-50 border-secondary-200 hover:bg-secondary-100 hover:border-primary-500/50'
+                }`}>
                 <Image
                   src={partner.logo}
                   alt={`${partner.name} - Partner van Keizer Logistics BV`}
