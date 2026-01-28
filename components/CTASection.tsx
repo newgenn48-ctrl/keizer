@@ -50,7 +50,7 @@ export default function CTASection() {
           <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-secondary-900 mb-4 md:mb-6">
             Klaar om samen te werken?
           </h2>
-          <p className="text-secondary-800/80 text-base md:text-lg lg:text-xl mb-8 md:mb-10 max-w-2xl mx-auto leading-relaxed">
+          <p className="text-secondary-800/80 text-lg md:text-xl lg:text-2xl mb-8 md:mb-10 max-w-2xl mx-auto leading-relaxed">
             Ontdek hoe Keizer Logistics BV uw transportprocessen kan optimaliseren.
             Neem vandaag nog contact met ons op voor een vrijblijvende offerte.
           </p>

@@ -87,7 +87,7 @@ export default function WhyChooseUs() {
               Keizer Logistics BV?
             </span>
           </h2>
-          <p className="text-secondary-400 text-base md:text-lg max-w-2xl mx-auto px-4">
+          <p className="text-secondary-400 text-lg md:text-xl max-w-2xl mx-auto px-4">
             Al meer dan 5 jaar de betrouwbare partner voor bedrijven die waarde hechten aan kwaliteit
           </p>
         </div>
@@ -108,7 +108,7 @@ export default function WhyChooseUs() {
               <h3 className="text-base md:text-lg font-bold text-white mb-2 group-hover:text-primary-300 transition-colors">
                 {feature.title}
               </h3>
-              <p className="text-secondary-400 text-xs md:text-sm leading-relaxed">
+              <p className="text-secondary-400 text-base md:text-lg leading-relaxed">
                 {feature.description}
               </p>
 

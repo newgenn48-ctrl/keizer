@@ -107,7 +107,7 @@ export default function ServicesOverview() {
               betekenen
             </span>
           </h2>
-          <p className="text-secondary-400 text-base md:text-lg max-w-2xl mx-auto px-4">
+          <p className="text-secondary-400 text-lg md:text-xl max-w-2xl mx-auto px-4">
             Keizer Logistics BV biedt een compleet pakket aan professionele transportdiensten
           </p>
         </div>
@@ -129,7 +129,7 @@ export default function ServicesOverview() {
               <h3 className="text-base md:text-lg font-bold text-white mb-2 group-hover:text-primary-300 transition-colors">
                 {service.title}
               </h3>
-              <p className="text-secondary-400 text-xs md:text-sm leading-relaxed mb-3 md:mb-4">
+              <p className="text-secondary-400 text-base md:text-lg leading-relaxed mb-3 md:mb-4">
                 {service.description}
               </p>
 

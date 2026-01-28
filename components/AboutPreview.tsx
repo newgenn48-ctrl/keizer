@@ -61,12 +61,12 @@ export default function AboutPreview() {
               </span>
             </h2>
 
-            <p className="text-secondary-600 text-sm md:text-base lg:text-lg mb-3 md:mb-4 leading-relaxed">
+            <p className="text-secondary-600 text-base md:text-lg lg:text-xl mb-3 md:mb-4 leading-relaxed">
               Keizer Logistics BV is een transportbedrijf met meer dan 5 jaar ervaring in nationaal
               en internationaal transport. Wij staan voor betrouwbaarheid, flexibiliteit
               en persoonlijke service.
             </p>
-            <p className="text-secondary-600 text-sm md:text-base lg:text-lg mb-6 md:mb-8 leading-relaxed">
+            <p className="text-secondary-600 text-base md:text-lg lg:text-xl mb-6 md:mb-8 leading-relaxed">
               Met ons moderne wagenpark en ervaren chauffeurs zorgen wij ervoor dat uw
               goederen veilig en op tijd op de plaats van bestemming aankomen.
             </p>
