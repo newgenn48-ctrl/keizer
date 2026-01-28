@@ -43,7 +43,7 @@ export default function Hero() {
         <div className="max-w-3xl">
           {/* Title */}
           <h1
-            className={`text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-4 md:mb-6 leading-[1.1] transition-all duration-700 delay-100 ${loaded ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-4'}`}
+            className={`text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold text-white mb-4 md:mb-6 leading-[1.1] transition-all duration-700 delay-100 ${loaded ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-4'}`}
           >
             <span className="text-transparent bg-clip-text bg-gradient-to-r from-primary-400 to-primary-300">
               Keizer Logistics BV
@@ -54,7 +54,7 @@ export default function Hero() {
 
           {/* Description */}
           <p
-            className={`text-base md:text-lg text-white/60 mb-8 md:mb-10 max-w-xl leading-relaxed transition-all duration-700 delay-200 ${loaded ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-4'}`}
+            className={`text-lg md:text-xl text-white/60 mb-8 md:mb-10 max-w-xl leading-relaxed transition-all duration-700 delay-200 ${loaded ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-4'}`}
           >
             Uw partner voor efficiënt nationaal en internationaal transport.
             Van distributie tot spoedvervoer — wij leveren altijd op tijd.
