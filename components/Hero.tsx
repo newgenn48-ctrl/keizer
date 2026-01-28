@@ -69,7 +69,7 @@ export default function Hero() {
               className="group relative inline-flex items-center justify-center px-6 md:px-8 py-3 md:py-4 rounded-full bg-gradient-to-r from-primary-500 to-primary-400 text-secondary-900 font-semibold overflow-hidden transition-all hover:shadow-lg hover:shadow-primary-500/25 hover:scale-105"
             >
               <span className="relative z-10 flex items-center gap-2">
-                Offerte aanvragen
+                Contact opnemen
                 <svg className="w-5 h-5 transition-transform group-hover:translate-x-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
                 </svg>
