@@ -12,10 +12,10 @@ const partners = [
 
 export default function Partners() {
   return (
-    <section className="py-12 md:py-16 bg-secondary-100 overflow-hidden">
+    <section className="py-12 md:py-16 bg-secondary-900 overflow-hidden">
       <div className="container-custom mb-8 md:mb-10">
         <div className="text-center">
-          <h2 className="text-2xl md:text-3xl font-bold text-secondary-900">
+          <h2 className="text-2xl md:text-3xl font-bold text-white">
             Onze Partners
           </h2>
         </div>
@@ -24,10 +24,10 @@ export default function Partners() {
       {/* Infinite scrolling container */}
       <div className="relative">
         {/* Gradient fade left */}
-        <div className="absolute left-0 top-0 bottom-0 w-20 md:w-40 bg-gradient-to-r from-secondary-100 to-transparent z-10 pointer-events-none" />
+        <div className="absolute left-0 top-0 bottom-0 w-20 md:w-40 bg-gradient-to-r from-secondary-900 to-transparent z-10 pointer-events-none" />
 
         {/* Gradient fade right */}
-        <div className="absolute right-0 top-0 bottom-0 w-20 md:w-40 bg-gradient-to-l from-secondary-100 to-transparent z-10 pointer-events-none" />
+        <div className="absolute right-0 top-0 bottom-0 w-20 md:w-40 bg-gradient-to-l from-secondary-900 to-transparent z-10 pointer-events-none" />
 
         {/* Scrolling track */}
         <div className="flex animate-scroll">
