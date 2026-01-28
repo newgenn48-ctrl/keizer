@@ -157,6 +157,23 @@
   animation: slide-up 0.5s ease-out forwards;
 }
 
+@keyframes scroll {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-33.333%);
+  }
+}
+
+.animate-scroll {
+  animation: scroll 25s linear infinite;
+}
+
+.animate-scroll:hover {
+  animation-play-state: paused;
+}
+
 .animate-shimmer {
   animation: shimmer 1.5s infinite;
 }
@@ -177,7 +194,8 @@
   .rotate-3d,
   .rotate-3d-slow,
   .animate-slide-up,
-  .animate-shimmer {
+  .animate-shimmer,
+  .animate-scroll {
     animation: none !important;
   }
 }
