@@ -12,7 +12,7 @@ const partners = [
 
 export default function Partners() {
   return (
-    <section className="py-12 md:py-16 bg-white overflow-hidden">
+    <section className="py-12 md:py-16 bg-secondary-100 overflow-hidden">
       <div className="container-custom mb-8 md:mb-10">
         <div className="text-center">
           <h2 className="text-2xl md:text-3xl font-bold text-secondary-900">
@@ -24,10 +24,10 @@ export default function Partners() {
       {/* Infinite scrolling container */}
       <div className="relative">
         {/* Gradient fade left */}
-        <div className="absolute left-0 top-0 bottom-0 w-20 md:w-40 bg-gradient-to-r from-white to-transparent z-10 pointer-events-none" />
+        <div className="absolute left-0 top-0 bottom-0 w-20 md:w-40 bg-gradient-to-r from-secondary-100 to-transparent z-10 pointer-events-none" />
 
         {/* Gradient fade right */}
-        <div className="absolute right-0 top-0 bottom-0 w-20 md:w-40 bg-gradient-to-l from-white to-transparent z-10 pointer-events-none" />
+        <div className="absolute right-0 top-0 bottom-0 w-20 md:w-40 bg-gradient-to-l from-secondary-100 to-transparent z-10 pointer-events-none" />
 
         {/* Scrolling track */}
         <div className="flex animate-scroll">
@@ -37,12 +37,12 @@ export default function Partners() {
               key={`${partner.name}-${index}`}
               className="flex-shrink-0 mx-6 md:mx-10 lg:mx-12"
             >
-              <div className="relative w-40 h-28 md:w-52 md:h-36 lg:w-64 lg:h-44 bg-secondary-100 rounded-xl p-4 shadow-sm hover:shadow-md hover:scale-105 transition-all duration-300">
+              <div className="relative w-40 h-28 md:w-52 md:h-36 lg:w-64 lg:h-44 hover:scale-105 transition-all duration-300">
                 <Image
                   src={partner.logo}
                   alt={`${partner.name} - Partner van Keizer Logistics BV`}
                   fill
-                  className="object-contain p-3"
+                  className="object-contain"
                   sizes="(max-width: 768px) 112px, (max-width: 1024px) 144px, 176px"
                 />
               </div>
