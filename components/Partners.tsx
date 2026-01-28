@@ -4,11 +4,11 @@ import Image from 'next/image'
 import { useRef, useState, useEffect } from 'react'
 
 const partners = [
-  { name: 'Keizer Logistics', logo: '/images/partners/Keizer Logistics.png', darkBg: false },
-  { name: 'S&F Holding', logo: '/images/partners/S&F Holding.png', darkBg: false },
-  { name: 'Keizer Snack&Bar', logo: '/images/partners/Keizer Snack&Bar.png', darkBg: false },
-  { name: 'SKR Transport', logo: '/images/partners/SKR TRANSPORT.png', darkBg: false },
-  { name: 'Invicta Group BV', logo: '/images/partners/INVICTA GROUP BV.png', darkBg: true },
+  { name: 'Keizer Logistics', logo: '/images/partners/Keizer Logistics.png', darkBg: false, zoom: true },
+  { name: 'S&F Holding', logo: '/images/partners/S&F Holding.png', darkBg: false, zoom: false },
+  { name: 'Keizer Snack&Bar', logo: '/images/partners/Keizer Snack&Bar.png', darkBg: false, zoom: true },
+  { name: 'SKR Transport', logo: '/images/partners/SKR TRANSPORT.png', darkBg: false, zoom: true },
+  { name: 'Invicta Group BV', logo: '/images/partners/INVICTA GROUP BV.png', darkBg: true, zoom: true },
 ]
 
 export default function Partners() {
@@ -123,7 +123,7 @@ export default function Partners() {
                   src={partner.logo}
                   alt={`${partner.name} - Partner van Keizer Logistics BV`}
                   fill
-                  className="object-contain scale-110 opacity-90 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none"
+                  className={`object-contain opacity-90 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none ${partner.zoom ? 'scale-110' : ''}`}
                   sizes="(max-width: 768px) 144px, (max-width: 1024px) 192px, 224px"
                   draggable={false}
                 />
