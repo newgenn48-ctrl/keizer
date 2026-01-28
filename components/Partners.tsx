@@ -1,6 +1,7 @@
 'use client'
 
 import Image from 'next/image'
+import { useRef, useState } from 'react'
 
 const partners = [
   { name: 'Keizer Logistics', logo: '/images/partners/Keizer Logistics.png', darkBg: false, zoom: true },
@@ -11,6 +12,49 @@ const partners = [
 ]
 
 export default function Partners() {
+  const trackRef = useRef<HTMLDivElement>(null)
+  const [isDragging, setIsDragging] = useState(false)
+  const [startX, setStartX] = useState(0)
+  const [scrollLeft, setScrollLeft] = useState(0)
+
+  const handleMouseDown = (e: React.MouseEvent) => {
+    setIsDragging(true)
+    setStartX(e.pageX - (trackRef.current?.offsetLeft || 0))
+    setScrollLeft(trackRef.current?.scrollLeft || 0)
+  }
+
+  const handleMouseUp = () => {
+    setIsDragging(false)
+  }
+
+  const handleMouseMove = (e: React.MouseEvent) => {
+    if (!isDragging) return
+    e.preventDefault()
+    const x = e.pageX - (trackRef.current?.offsetLeft || 0)
+    const walk = (x - startX) * 2
+    if (trackRef.current) {
+      trackRef.current.scrollLeft = scrollLeft - walk
+    }
+  }
+
+  const handleTouchStart = (e: React.TouchEvent) => {
+    setIsDragging(true)
+    setStartX(e.touches[0].pageX - (trackRef.current?.offsetLeft || 0))
+    setScrollLeft(trackRef.current?.scrollLeft || 0)
+  }
+
+  const handleTouchMove = (e: React.TouchEvent) => {
+    if (!isDragging) return
+    const x = e.touches[0].pageX - (trackRef.current?.offsetLeft || 0)
+    const walk = (x - startX) * 2
+    if (trackRef.current) {
+      trackRef.current.scrollLeft = scrollLeft - walk
+    }
+  }
+
+  const handleTouchEnd = () => {
+    setIsDragging(false)
+  }
 
   return (
     <section className="relative py-16 md:py-20 bg-white overflow-hidden">
@@ -44,8 +88,21 @@ export default function Partners() {
         {/* Gradient fade right */}
         <div className="absolute right-0 top-0 bottom-0 w-24 md:w-48 bg-gradient-to-l from-white via-white/80 to-transparent z-10 pointer-events-none" />
 
-        {/* Continuous scrolling track */}
-        <div className="flex animate-scroll py-4">
+        {/* Continuous scrolling track with drag support */}
+        <div
+          ref={trackRef}
+          className={`flex py-4 cursor-grab active:cursor-grabbing overflow-x-auto scrollbar-hide ${
+            isDragging ? '' : 'animate-scroll'
+          }`}
+          style={{ scrollbarWidth: 'none', msOverflowStyle: 'none' }}
+          onMouseDown={handleMouseDown}
+          onMouseUp={handleMouseUp}
+          onMouseLeave={handleMouseUp}
+          onMouseMove={handleMouseMove}
+          onTouchStart={handleTouchStart}
+          onTouchMove={handleTouchMove}
+          onTouchEnd={handleTouchEnd}
+        >
           {[...partners, ...partners, ...partners, ...partners].map((partner, index) => (
             <div
               key={`${partner.name}-${index}`}
