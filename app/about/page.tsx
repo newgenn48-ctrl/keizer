@@ -59,7 +59,7 @@ const stats = [
   { value: '50+', label: 'Bussen' },
   { value: '15+', label: 'Vrachtwagens' },
   { value: '15+', label: 'Elektrische auto\'s' },
-  { value: '1', label: 'Fiets' },
+  { value: '40+', label: 'Fietsen' },
 ]
 
 export default function AboutPage() {

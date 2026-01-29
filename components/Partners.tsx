@@ -5,7 +5,8 @@ import { useRef, useState } from 'react'
 
 const partners = [
   { name: 'Keizer Logistics', logo: '/images/partners/v2_Keizer Logistics.png', darkBg: false },
-  { name: 'S&F Holding', logo: '/images/partners/v2_S&F Holding.png', darkBg: false },
+  { name: 'S&F Holding', logo: '/images/partners/v3_S&F Holding.png', darkBg: false },
+  { name: 'S&F Keizer Logistics', logo: '/images/partners/v3_S&F Keizer Logistics.png', darkBg: false },
   { name: 'Keizer Snack&Bar', logo: '/images/partners/v2_Keizer Snack&Bar.png', darkBg: false },
   { name: 'SKR Transport', logo: '/images/partners/v2_SKR TRANSPORT.png', darkBg: false },
   { name: 'Invicta Group BV', logo: '/images/partners/v2_INVICTA GROUP BV.png', darkBg: true },
