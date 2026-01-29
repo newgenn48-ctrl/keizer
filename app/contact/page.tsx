@@ -122,7 +122,7 @@ export default function ContactPage() {
                 <h2 className="text-xl md:text-2xl font-bold text-secondary-900 mb-2">
                   Stuur ons een bericht
                 </h2>
-                <p className="text-secondary-600 text-sm md:text-base mb-6 md:mb-8">
+                <p className="text-secondary-600 text-base md:text-lg mb-6 md:mb-8">
                   Vul het onderstaande formulier in en wij nemen binnen 24 uur
                   contact met u op.
                 </p>
@@ -146,7 +146,7 @@ export default function ContactPage() {
                         {item.title}
                       </h3>
                       {item.content.map((line, lineIndex) => (
-                        <p key={lineIndex} className="text-secondary-400 text-sm md:text-base">
+                        <p key={lineIndex} className="text-secondary-400 text-base md:text-lg">
                           {item.href && lineIndex === 0 ? (
                             <a
                               href={item.href}
@@ -167,7 +167,7 @@ export default function ContactPage() {
               {/* Emergency Contact */}
               <div className="bg-gradient-to-br from-primary-500 to-primary-600 rounded-xl p-5 md:p-6">
                 <h3 className="font-semibold text-secondary-900 text-base md:text-lg mb-2">Spoedtransport?</h3>
-                <p className="text-secondary-800/80 text-sm md:text-base mb-4">
+                <p className="text-secondary-800/80 text-base md:text-lg mb-4">
                   Voor urgente transporten zijn wij 24/7 bereikbaar.
                 </p>
                 <a
@@ -213,13 +213,13 @@ export default function ContactPage() {
             <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-white mb-2">
               Vind ons hier
             </h2>
-            <p className="text-secondary-400 text-sm md:text-base">
+            <p className="text-secondary-400 text-base md:text-lg">
               Schietlood 14 D, 2495AN 's-Gravenhage
             </p>
           </div>
           <div className="rounded-2xl overflow-hidden shadow-2xl">
             <iframe
-              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2456.8!2d4.3!3d52.05!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47c5b7348d7d5555%3A0x0!2sSchietlood%2014%2C%202495%20AN%20Den%20Haag!5e0!3m2!1snl!2snl!4v1"
+              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2456.8!2d4.3!3d52.05!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47c5b7348d7d5555%3A0x0!2sSchietlood%2014D%2C%202495%20AN%20Den%20Haag!5e0!3m2!1snl!2snl!4v1"
               width="100%"
               height="400"
               style={{ border: 0 }}
@@ -232,7 +232,7 @@ export default function ContactPage() {
           </div>
           <div className="mt-6 text-center">
             <a
-              href="https://www.google.com/maps/search/?api=1&query=Schietlood+14+D+2495AN+Den+Haag"
+              href="https://www.google.com/maps/search/?api=1&query=Schietlood+14D+2495AN+Den+Haag"
               target="_blank"
               rel="noopener noreferrer"
               className="inline-flex items-center gap-2 text-primary-400 hover:text-primary-300 text-sm md:text-base font-medium transition-colors"

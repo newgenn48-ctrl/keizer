@@ -71,7 +71,7 @@ export default function Hero() {
               Keizer Logistics BV
             </span>
             <br />
-            <span className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl">Uw betrouwbare transportpartner</span>
+            <span className="text-xl sm:text-2xl md:text-4xl lg:text-5xl">Uw betrouwbare transportpartner</span>
           </h1>
 
           {/* Description */}

@@ -4,11 +4,12 @@ import Image from 'next/image'
 import { useRef, useState } from 'react'
 
 const partners = [
-  { name: 'Keizer Logistics', logo: '/images/partners/Keizer Logistics.png', darkBg: false, zoom: true },
-  { name: 'S&F Holding', logo: '/images/partners/S&F Holding.png', darkBg: false, zoom: false },
-  { name: 'Keizer Snack&Bar', logo: '/images/partners/Keizer Snack&Bar.png', darkBg: false, zoom: true },
-  { name: 'SKR Transport', logo: '/images/partners/SKR TRANSPORT.png', darkBg: false, zoom: true },
-  { name: 'Invicta Group BV', logo: '/images/partners/INVICTA GROUP BV.png', darkBg: true, zoom: true },
+  { name: 'Keizer Logistics', logo: '/images/partners/v2_Keizer Logistics.png', darkBg: false },
+  { name: 'S&F Holding', logo: '/images/partners/v2_S&F Holding.png', darkBg: false },
+  { name: 'Keizer Snack&Bar', logo: '/images/partners/v2_Keizer Snack&Bar.png', darkBg: false },
+  { name: 'SKR Transport', logo: '/images/partners/v2_SKR TRANSPORT.png', darkBg: false },
+  { name: 'Invicta Group BV', logo: '/images/partners/v2_INVICTA GROUP BV.png', darkBg: true },
+  { name: 'Dilan Market', logo: '/images/partners/v2_Dilan market.png', darkBg: false },
 ]
 
 export default function Partners() {
@@ -57,19 +58,10 @@ export default function Partners() {
   }
 
   return (
-    <section className="relative py-16 md:py-20 bg-white overflow-hidden">
-      {/* Subtle background pattern */}
-      <div className="absolute inset-0 opacity-[0.03]">
-        <div className="absolute inset-0" style={{ backgroundImage: 'radial-gradient(circle at 1px 1px, #1a1a1a 1px, transparent 0)', backgroundSize: '40px 40px' }} />
-      </div>
-
-      {/* Top border accent */}
-      <div className="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-primary-500/30 to-transparent" />
-
-      {/* Bottom border accent */}
-      <div className="absolute bottom-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-primary-500/30 to-transparent" />
-
-      <div className="container-custom mb-10 md:mb-12 relative z-10">
+    <section className="relative py-10 md:py-14 bg-white overflow-hidden">
+      
+      
+      <div className="container-custom mb-6 md:mb-8 relative z-10">
         <div className="text-center">
           <span className="text-primary-600 text-sm font-medium tracking-wider uppercase mb-3 block">
             Samenwerkingen
@@ -106,19 +98,19 @@ export default function Partners() {
           {[...partners, ...partners, ...partners, ...partners].map((partner, index) => (
             <div
               key={`${partner.name}-${index}`}
-              className="flex-shrink-0 mx-4 md:mx-8 lg:mx-10"
+              className="flex-shrink-0 mx-4 sm:mx-6 md:mx-8 lg:mx-10"
             >
-              <div className={`relative w-40 h-28 md:w-52 md:h-36 lg:w-60 lg:h-40 rounded-xl border p-2 hover:shadow-lg hover:scale-105 transition-all duration-300 select-none group overflow-hidden ${
+              <div className={`relative w-36 h-28 sm:w-44 sm:h-32 md:w-52 md:h-40 lg:w-60 lg:h-44 rounded-2xl border-2 p-4 hover:shadow-xl hover:scale-105 transition-all duration-300 select-none group overflow-hidden ${
                   partner.darkBg
-                    ? 'bg-secondary-800 border-secondary-700 hover:bg-secondary-700 hover:border-primary-500/50'
-                    : 'bg-secondary-50 border-secondary-200 hover:bg-secondary-100 hover:border-primary-500/50'
+                    ? 'bg-secondary-900 border-secondary-700 hover:border-primary-500/50'
+                    : 'bg-white border-secondary-200 hover:border-primary-500/50'
                 }`}>
                 <Image
                   src={partner.logo}
                   alt={`${partner.name} - Partner van Keizer Logistics BV`}
                   fill
-                  className={`object-contain opacity-90 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none ${partner.zoom ? 'scale-110' : ''}`}
-                  sizes="(max-width: 768px) 144px, (max-width: 1024px) 192px, 224px"
+                  className="object-contain p-2 group-hover:scale-105 transition-transform duration-300 pointer-events-none"
+                  sizes="(max-width: 768px) 144px, (max-width: 1024px) 208px, 240px"
                   draggable={false}
                 />
               </div>

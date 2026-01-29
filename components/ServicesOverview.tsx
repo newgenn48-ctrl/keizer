@@ -78,15 +78,15 @@ export default function ServicesOverview() {
   return (
     <section ref={sectionRef} className="py-16 md:py-24 bg-secondary-950 relative overflow-hidden">
       {/* Wave decoration top */}
-      <div className="absolute top-0 left-0 right-0 rotate-180">
-        <svg viewBox="0 0 1440 100" className="w-full h-auto fill-white">
+      <div className="absolute top-0 left-0 right-0 rotate-180 -mt-px">
+        <svg viewBox="0 0 1440 100" preserveAspectRatio="none" className="w-full h-16 md:h-24 fill-white block">
           <path d="M0,50 C360,100 720,0 1080,50 C1260,75 1380,50 1440,40 L1440,100 L0,100 Z" />
         </svg>
       </div>
 
       {/* Wave decoration bottom */}
-      <div className="absolute bottom-0 left-0 right-0">
-        <svg viewBox="0 0 1440 100" className="w-full h-auto fill-secondary-50">
+      <div className="absolute bottom-0 left-0 right-0 -mb-px">
+        <svg viewBox="0 0 1440 100" preserveAspectRatio="none" className="w-full h-16 md:h-24 fill-secondary-50 block">
           <path d="M0,50 C360,0 720,100 1080,50 C1260,25 1380,50 1440,60 L1440,100 L0,100 Z" />
         </svg>
       </div>

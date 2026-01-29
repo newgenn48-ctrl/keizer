@@ -17,7 +17,7 @@ export default function VoorwaardenPage() {
       <section className="py-16 md:py-24 bg-white">
         <div className="container-custom">
           <div className="max-w-3xl mx-auto">
-            <p className="text-secondary-500 text-sm md:text-base mb-8">
+            <p className="text-secondary-500 text-base md:text-lg mb-8">
               Laatste update: januari 2025
             </p>
 
@@ -26,7 +26,7 @@ export default function VoorwaardenPage() {
                 <h2 className="text-xl md:text-2xl font-bold text-secondary-900 mb-4">
                   Artikel 1 - Definities
                 </h2>
-                <p className="text-secondary-600 text-sm md:text-base leading-relaxed mb-4">
+                <p className="text-secondary-600 text-base md:text-lg leading-relaxed mb-4">
                   In deze algemene voorwaarden wordt verstaan onder:
                 </p>
                 <ul className="space-y-2">
@@ -39,7 +39,7 @@ export default function VoorwaardenPage() {
                       <div className="w-5 h-5 md:w-6 md:h-6 rounded-full bg-primary-500/20 flex items-center justify-center flex-shrink-0 mt-0.5">
                         <div className="w-1.5 h-1.5 rounded-full bg-primary-500" />
                       </div>
-                      <span className="text-secondary-600 text-sm md:text-base">
+                      <span className="text-secondary-600 text-base md:text-lg">
                         <strong>{item.term}</strong> {item.def}
                       </span>
                     </li>
@@ -51,7 +51,7 @@ export default function VoorwaardenPage() {
                 <h2 className="text-xl md:text-2xl font-bold text-secondary-900 mb-4">
                   Artikel 2 - Toepasselijkheid
                 </h2>
-                <p className="text-secondary-600 text-sm md:text-base leading-relaxed">
+                <p className="text-secondary-600 text-base md:text-lg leading-relaxed">
                   Deze algemene voorwaarden zijn van toepassing op alle aanbiedingen,
                   offertes en overeenkomsten tussen Keizer Logistics BV en opdrachtgever.
                 </p>
@@ -61,7 +61,7 @@ export default function VoorwaardenPage() {
                 <h2 className="text-xl md:text-2xl font-bold text-secondary-900 mb-4">
                   Artikel 3 - Offertes en overeenkomsten
                 </h2>
-                <p className="text-secondary-600 text-sm md:text-base leading-relaxed">
+                <p className="text-secondary-600 text-base md:text-lg leading-relaxed">
                   Alle offertes zijn vrijblijvend, tenzij uitdrukkelijk anders
                   vermeld. Een overeenkomst komt tot stand na schriftelijke
                   bevestiging door Keizer Logistics BV.
@@ -72,7 +72,7 @@ export default function VoorwaardenPage() {
                 <h2 className="text-xl md:text-2xl font-bold text-secondary-900 mb-4">
                   Artikel 4 - Uitvoering van diensten
                 </h2>
-                <p className="text-secondary-600 text-sm md:text-base leading-relaxed">
+                <p className="text-secondary-600 text-base md:text-lg leading-relaxed">
                   Keizer Logistics BV zal de overeengekomen diensten naar beste inzicht
                   en vermogen uitvoeren. Opgegeven levertijden gelden als indicatie
                   en niet als fatale termijn.
@@ -83,7 +83,7 @@ export default function VoorwaardenPage() {
                 <h2 className="text-xl md:text-2xl font-bold text-secondary-900 mb-4">
                   Artikel 5 - Prijzen en betaling
                 </h2>
-                <p className="text-secondary-600 text-sm md:text-base leading-relaxed">
+                <p className="text-secondary-600 text-base md:text-lg leading-relaxed">
                   Alle prijzen zijn exclusief BTW, tenzij anders vermeld. Betaling
                   dient te geschieden binnen 30 dagen na factuurdatum.
                 </p>
@@ -93,7 +93,7 @@ export default function VoorwaardenPage() {
                 <h2 className="text-xl md:text-2xl font-bold text-secondary-900 mb-4">
                   Artikel 6 - Aansprakelijkheid
                 </h2>
-                <p className="text-secondary-600 text-sm md:text-base leading-relaxed">
+                <p className="text-secondary-600 text-base md:text-lg leading-relaxed">
                   De aansprakelijkheid van Keizer Logistics BV is beperkt conform de
                   AVC 2002 (Algemene Vervoercondities) en de CMR (bij internationaal
                   vervoer).
@@ -104,7 +104,7 @@ export default function VoorwaardenPage() {
                 <h2 className="text-xl md:text-2xl font-bold text-secondary-900 mb-4">
                   Artikel 7 - Overmacht
                 </h2>
-                <p className="text-secondary-600 text-sm md:text-base leading-relaxed">
+                <p className="text-secondary-600 text-base md:text-lg leading-relaxed">
                   Keizer Logistics BV is niet aansprakelijk voor tekortkomingen als
                   gevolg van overmacht, waaronder begrepen: verkeersbelemmeringen,
                   stakingen, weersomstandigheden en overheidsmaatregelen.
@@ -115,7 +115,7 @@ export default function VoorwaardenPage() {
                 <h2 className="text-xl md:text-2xl font-bold text-secondary-900 mb-4">
                   Artikel 8 - Toepasselijk recht
                 </h2>
-                <p className="text-secondary-600 text-sm md:text-base leading-relaxed">
+                <p className="text-secondary-600 text-base md:text-lg leading-relaxed">
                   Op alle overeenkomsten is uitsluitend Nederlands recht van
                   toepassing. Geschillen worden voorgelegd aan de bevoegde rechter
                   te 's-Gravenhage.
@@ -126,11 +126,11 @@ export default function VoorwaardenPage() {
                 <h2 className="text-xl md:text-2xl font-bold text-secondary-900 mb-4">
                   Contact
                 </h2>
-                <p className="text-secondary-600 text-sm md:text-base leading-relaxed mb-4">
+                <p className="text-secondary-600 text-base md:text-lg leading-relaxed mb-4">
                   Voor vragen over deze algemene voorwaarden kunt u contact opnemen met:
                 </p>
                 <div className="bg-secondary-950 rounded-xl p-5 md:p-6">
-                  <address className="text-secondary-300 not-italic text-sm md:text-base leading-relaxed">
+                  <address className="text-secondary-300 not-italic text-base md:text-lg leading-relaxed">
                     <strong className="text-white">Keizer Logistics BV</strong><br />
                     Schietlood 14 D<br />
                     2495AN 's-Gravenhage<br /><br />

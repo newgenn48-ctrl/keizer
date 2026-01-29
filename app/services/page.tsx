@@ -136,7 +136,7 @@ export default function ServicesPage() {
                     <p className="text-base md:text-lg text-primary-600 font-medium mb-4">
                       {service.subtitle}
                     </p>
-                    <p className="text-secondary-600 text-sm md:text-base leading-relaxed mb-6">
+                    <p className="text-secondary-600 text-base md:text-lg leading-relaxed mb-6">
                       {service.description}
                     </p>
                     <Link
@@ -173,7 +173,7 @@ export default function ServicesPage() {
                                 />
                               </svg>
                             </div>
-                            <span className="text-secondary-300 text-sm md:text-base">{feature}</span>
+                            <span className="text-secondary-300 text-base md:text-lg">{feature}</span>
                           </li>
                         ))}
                       </ul>

@@ -84,7 +84,7 @@ export default function AboutPage() {
                   ambities
                 </span>
               </h2>
-              <div className="space-y-4 text-secondary-600 text-sm md:text-base leading-relaxed">
+              <div className="space-y-4 text-secondary-600 text-base md:text-lg leading-relaxed">
                 <p>
                   Keizer Logistics BV is ontstaan vanuit een passie voor transport en
                   een drive om klanten de beste service te bieden. Wat begon als een
@@ -129,7 +129,10 @@ export default function AboutPage() {
               <div className="bg-secondary-950 rounded-2xl p-6 md:p-8">
                 <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-5 gap-4 md:gap-6">
                   {stats.map((stat, index) => (
-                    <div key={index} className="text-center">
+                    <div
+                      key={index}
+                      className={`text-center ${index === stats.length - 1 ? 'col-span-2 sm:col-span-1' : ''}`}
+                    >
                       <p className="text-2xl sm:text-3xl md:text-4xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-primary-400 to-primary-300 mb-1">
                         {stat.value}
                       </p>
@@ -167,7 +170,7 @@ export default function AboutPage() {
                 Kernwaarden
               </span>
             </h2>
-            <p className="text-secondary-400 text-sm md:text-base lg:text-lg">
+            <p className="text-secondary-400 text-base md:text-lg lg:text-xl">
               De principes die ons dagelijks handelen bepalen en de basis vormen
               voor ons succes.
             </p>
@@ -184,7 +187,7 @@ export default function AboutPage() {
                 <h3 className="text-base md:text-lg font-bold text-white mb-2 group-hover:text-primary-300 transition-colors">
                   {value.title}
                 </h3>
-                <p className="text-secondary-400 text-xs md:text-sm leading-relaxed">
+                <p className="text-secondary-400 text-sm md:text-base leading-relaxed">
                   {value.description}
                 </p>
                 <div className="absolute bottom-0 left-5 right-5 md:left-6 md:right-6 h-0.5 bg-gradient-to-r from-transparent via-primary-500 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
