@@ -111,7 +111,7 @@ export async function submitContactForm(
     // Send email to Keizer Logistics
     await transporter.sendMail({
       from: `"Keizer Logistics Website" <${process.env.SMTP_USER}>`,
-      to: 'Info@keizer-logistics.nl',
+      to: 'contact@keizer-logistics.nl',
       replyTo: data.email,
       subject: `Nieuw contactformulier: ${escapeHtml(data.service || 'Algemeen')} - ${escapeHtml(data.name)}`,
       html: `
