@@ -121,22 +121,17 @@ export default function ServicesOverview() {
               className={`group relative bg-white/5 backdrop-blur-sm border border-white/10 rounded-xl md:rounded-2xl p-5 md:p-6 hover:bg-white/10 transition-all duration-500 hover:-translate-y-2 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`}
               style={{ transitionDelay: `${index * 100}ms` }}
             >
-              {/* Icon */}
-              <div className="w-10 h-10 md:w-12 md:h-12 rounded-lg md:rounded-xl bg-gradient-to-br from-primary-500 to-primary-600 flex items-center justify-center text-white mb-3 md:mb-4 group-hover:scale-110 transition-transform duration-300">
-                {service.icon}
-              </div>
-
-              <h3 className="text-base md:text-lg font-bold text-white mb-2 group-hover:text-primary-300 transition-colors">
+              <h3 className="text-lg md:text-xl font-bold text-white mb-3 group-hover:text-primary-300 transition-colors">
                 {service.title}
               </h3>
-              <p className="text-secondary-400 text-base md:text-lg leading-relaxed mb-3 md:mb-4">
+              <p className="text-secondary-400 text-base md:text-lg leading-relaxed mb-4">
                 {service.description}
               </p>
 
               {/* Arrow */}
-              <div className="flex items-center gap-2 text-primary-400 text-xs md:text-sm font-medium opacity-0 group-hover:opacity-100 transition-all duration-300">
+              <div className="flex items-center gap-2 text-primary-400 text-sm md:text-base font-medium opacity-0 group-hover:opacity-100 transition-all duration-300">
                 <span>Meer info</span>
-                <svg className="w-3 h-3 md:w-4 md:h-4 transition-transform group-hover:translate-x-1" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <svg className="w-4 h-4 md:w-5 md:h-5 transition-transform group-hover:translate-x-1" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
                 </svg>
               </div>

@@ -100,12 +100,7 @@ export default function WhyChooseUs() {
               className={`group relative bg-white/5 backdrop-blur-sm border border-white/10 rounded-xl md:rounded-2xl p-5 md:p-6 hover:bg-white/10 transition-all duration-500 hover:-translate-y-2 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`}
               style={{ transitionDelay: `${index * 100}ms` }}
             >
-              {/* Icon */}
-              <div className="w-10 h-10 md:w-12 md:h-12 rounded-lg md:rounded-xl bg-gradient-to-br from-primary-500 to-primary-600 flex items-center justify-center text-white mb-3 md:mb-4 group-hover:scale-110 transition-transform duration-300">
-                {feature.icon}
-              </div>
-
-              <h3 className="text-base md:text-lg font-bold text-white mb-2 group-hover:text-primary-300 transition-colors">
+              <h3 className="text-lg md:text-xl font-bold text-white mb-3 group-hover:text-primary-300 transition-colors">
                 {feature.title}
               </h3>
               <p className="text-secondary-400 text-base md:text-lg leading-relaxed">
