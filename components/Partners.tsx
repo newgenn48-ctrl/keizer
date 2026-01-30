@@ -5,11 +5,11 @@ import { useRef, useState } from 'react'
 
 const partners = [
   { name: 'Keizer Transport Holding', logo: '/images/partners/Keizer transport holding.png', darkBg: false },
-  { name: 'S&F Holding', logo: '/images/partners/S&F Holding.png', darkBg: false },
   { name: 'S&F Keizer Logistics', logo: '/images/partners/S&F Keizer Logistics.png', darkBg: false },
   { name: 'Keizer Snack&Bar', logo: '/images/partners/Keizer Snack&Bar.png', darkBg: false },
   { name: 'Keizer Garage', logo: '/images/partners/Keizer Garage.png', darkBg: false },
   { name: 'Keizer Personeel BV', logo: '/images/partners/Keizer personeel bv.png', darkBg: false },
+  { name: 'S&F Holding', logo: '/images/partners/S&F Holding.png', darkBg: false },
   { name: 'Keizer Emaar SY', logo: '/images/partners/Keizer Emaar SY.png', darkBg: false },
   { name: 'MAE Transport BV', logo: '/images/partners/MAE Transport bv.png', darkBg: false },
   { name: 'SKR Transport', logo: '/images/partners/SKR TRANSPORT.png', darkBg: false },
