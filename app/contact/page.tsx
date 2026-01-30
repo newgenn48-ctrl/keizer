@@ -62,6 +62,26 @@ const contactInfo = [
     ),
   },
   {
+    title: 'Planning',
+    content: ['+31 6 34195280', '+31 6 42069593'],
+    icon: (
+      <svg
+        className="w-5 h-5 md:w-6 md:h-6"
+        fill="none"
+        stroke="currentColor"
+        viewBox="0 0 24 24"
+        aria-hidden="true"
+      >
+        <path
+          strokeLinecap="round"
+          strokeLinejoin="round"
+          strokeWidth={2}
+          d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"
+        />
+      </svg>
+    ),
+  },
+  {
     title: 'E-mail',
     content: ['Info@keizer-logistics.nl'],
     href: 'mailto:Info@keizer-logistics.nl',
@@ -145,20 +165,31 @@ export default function ContactPage() {
                       <h3 className="font-semibold text-white text-sm md:text-base mb-1 md:mb-2">
                         {item.title}
                       </h3>
-                      {item.content.map((line, lineIndex) => (
-                        <p key={lineIndex} className="text-secondary-400 text-base md:text-lg">
-                          {item.href && lineIndex === 0 ? (
-                            <a
-                              href={item.href}
-                              className="hover:text-primary-400 transition-colors"
-                            >
-                              {line}
-                            </a>
-                          ) : (
-                            line
-                          )}
-                        </p>
-                      ))}
+                      {item.content.map((line, lineIndex) => {
+                        const isPhone = line.startsWith('+31')
+                        const phoneHref = isPhone ? `tel:${line.replace(/\s/g, '')}` : null
+                        return (
+                          <p key={lineIndex} className="text-secondary-400 text-base md:text-lg">
+                            {item.href && lineIndex === 0 ? (
+                              <a
+                                href={item.href}
+                                className="hover:text-primary-400 transition-colors"
+                              >
+                                {line}
+                              </a>
+                            ) : phoneHref ? (
+                              <a
+                                href={phoneHref}
+                                className="hover:text-primary-400 transition-colors"
+                              >
+                                {line}
+                              </a>
+                            ) : (
+                              line
+                            )}
+                          </p>
+                        )
+                      })}
                     </div>
                   </div>
                 </div>
