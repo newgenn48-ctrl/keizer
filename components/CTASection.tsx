@@ -37,8 +37,8 @@ export default function CTASection() {
       </div>
 
       {/* Wave top */}
-      <div className="absolute top-0 left-0 right-0">
-        <svg viewBox="0 0 1440 60" className="w-full h-auto fill-secondary-950">
+      <div className="absolute top-0 left-0 right-0 -mt-px">
+        <svg viewBox="0 0 1440 60" preserveAspectRatio="none" className="w-full h-12 md:h-16 block fill-secondary-50">
           <path d="M0,30 C480,60 960,0 1440,30 L1440,0 L0,0 Z" />
         </svg>
       </div>
