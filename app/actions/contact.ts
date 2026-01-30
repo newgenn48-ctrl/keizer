@@ -172,13 +172,13 @@ ${data.message}
             <p><strong>Dienst:</strong> ${escapeHtml(data.service || 'Algemeen')}</p>
             <p><strong>Bericht:</strong><br>${escapeHtml(data.message).replace(/\n/g, '<br>')}</p>
           </div>
-          <p>Voor spoedtransport kunt u ons 24/7 bereiken op <a href="tel:+31684903364">06 84903364</a>.</p>
+          <p>Voor spoedtransport kunt u ons 24/7 bereiken op <a href="tel:+31684903364">+31 6 84903364</a>.</p>
           <p>Met vriendelijke groet,<br><strong>Keizer Logistics BV</strong></p>
           <hr style="border: none; border-top: 1px solid #ddd; margin: 20px 0;">
           <p style="color: #666; font-size: 12px;">
             Keizer Logistics BV<br>
             Schietlood 14 D, 2495AN 's-Gravenhage<br>
-            Tel: 06 84903364 | E-mail: Info@keizer-logistics.nl
+            Tel: +31 6 84903364 | E-mail: Info@keizer-logistics.nl
           </p>
         </div>
       `,

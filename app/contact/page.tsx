@@ -42,7 +42,7 @@ const contactInfo = [
   },
   {
     title: 'Telefoon',
-    content: ['06 84903364'],
+    content: ['+31 6 84903364'],
     href: 'tel:+31684903364',
     icon: (
       <svg

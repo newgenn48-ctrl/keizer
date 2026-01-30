@@ -135,7 +135,7 @@ export default function VoorwaardenPage() {
                     Schietlood 14 D<br />
                     2495AN 's-Gravenhage<br /><br />
                     E-mail: <a href="mailto:Info@keizer-logistics.nl" className="text-primary-400 hover:text-primary-300 transition-colors">Info@keizer-logistics.nl</a><br />
-                    Telefoon: <a href="tel:+31684903364" className="text-primary-400 hover:text-primary-300 transition-colors">06 84903364</a><br /><br />
+                    Telefoon: <a href="tel:+31684903364" className="text-primary-400 hover:text-primary-300 transition-colors">+31 6 84903364</a><br /><br />
                     <span className="text-secondary-500">KvK: 92059902</span><br />
                     <span className="text-secondary-500">BTW: NL865869492B01</span>
                   </address>
