@@ -1,6 +1,7 @@
 import type { Metadata } from 'next'
 import ContactForm from '@/components/ContactForm'
 import PageHero from '@/components/PageHero'
+import CTASection from '@/components/CTASection'
 
 export const metadata: Metadata = {
   title: 'Contact',
@@ -197,23 +198,16 @@ export default function ContactPage() {
       </section>
 
       {/* Map Section */}
-      <section className="bg-secondary-950 relative overflow-hidden">
-        {/* Wave top */}
-        <div className="absolute top-0 left-0 right-0 rotate-180">
-          <svg viewBox="0 0 1440 60" className="w-full h-auto fill-white">
-            <path d="M0,30 C480,60 960,0 1440,30 L1440,60 L0,60 Z" />
-          </svg>
-        </div>
-
-        <div className="container-custom py-16 md:py-20 pt-20 md:pt-24">
+      <section className="bg-secondary-50 relative overflow-hidden">
+        <div className="container-custom py-16 md:py-20">
           <div className="text-center mb-8">
-            <span className="inline-block px-3 md:px-4 py-1 md:py-1.5 rounded-full bg-white/10 text-primary-300 text-xs md:text-sm font-semibold mb-4">
+            <span className="inline-block px-3 md:px-4 py-1 md:py-1.5 rounded-full bg-primary-100 text-primary-700 text-xs md:text-sm font-semibold mb-4">
               Locatie
             </span>
-            <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-white mb-2">
+            <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-secondary-900 mb-2">
               Vind ons hier
             </h2>
-            <p className="text-secondary-400 text-base md:text-lg">
+            <p className="text-secondary-600 text-base md:text-lg">
               Schietlood 14 D, 2495AN 's-Gravenhage
             </p>
           </div>
@@ -235,7 +229,7 @@ export default function ContactPage() {
               href="https://www.google.com/maps/search/?api=1&query=Schietlood+14D+2495AN+Den+Haag"
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-flex items-center gap-2 text-primary-400 hover:text-primary-300 text-sm md:text-base font-medium transition-colors"
+              className="inline-flex items-center gap-2 text-primary-600 hover:text-primary-700 text-sm md:text-base font-medium transition-colors"
             >
               Open in Google Maps
               <svg
@@ -256,6 +250,8 @@ export default function ContactPage() {
           </div>
         </div>
       </section>
+
+      <CTASection />
     </>
   )
 }
