@@ -52,6 +52,7 @@ export default function ContactForm() {
             id="name"
             name="name"
             required
+            autoComplete="name"
             className={`w-full px-4 py-3 rounded-lg border ${
               state.errors?.name
                 ? 'border-red-500 focus:ring-red-500'
@@ -80,6 +81,7 @@ export default function ContactForm() {
             id="email"
             name="email"
             required
+            autoComplete="email"
             className={`w-full px-4 py-3 rounded-lg border ${
               state.errors?.email
                 ? 'border-red-500 focus:ring-red-500'
@@ -107,6 +109,7 @@ export default function ContactForm() {
             type="tel"
             id="phone"
             name="phone"
+            autoComplete="tel"
             className={`w-full px-4 py-3 rounded-lg border ${
               state.errors?.phone
                 ? 'border-red-500 focus:ring-red-500'
@@ -134,6 +137,7 @@ export default function ContactForm() {
             type="text"
             id="company"
             name="company"
+            autoComplete="organization"
             className="w-full px-4 py-3 rounded-lg border border-secondary-300 focus:outline-none focus:ring-2 focus:ring-primary-500 focus:border-transparent transition-colors"
             placeholder="Uw bedrijfsnaam"
           />
