@@ -70,7 +70,7 @@ export default function WhyChooseUs() {
 
       {/* Wave decoration */}
       <div className="absolute top-0 left-0 right-0 rotate-180 -mt-px">
-        <svg viewBox="0 0 1440 100" preserveAspectRatio="none" className="w-full h-16 md:h-24 fill-secondary-50 block">
+        <svg viewBox="0 0 1440 100" preserveAspectRatio="none" className="w-full h-16 md:h-24 fill-white block">
           <path d="M0,50 C360,100 720,0 1080,50 C1260,75 1380,50 1440,40 L1440,100 L0,100 Z" />
         </svg>
       </div>
