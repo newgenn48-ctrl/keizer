@@ -1,6 +1,38 @@
 'use server'
 
 import nodemailer from 'nodemailer'
+import { headers } from 'next/headers'
+
+// Simple in-memory rate limiter
+const rateLimitMap = new Map<string, { count: number; resetTime: number }>()
+const RATE_LIMIT_MAX = 5 // Max 5 submissions
+const RATE_LIMIT_WINDOW = 60 * 60 * 1000 // 1 hour in milliseconds
+
+function checkRateLimit(identifier: string): boolean {
+  const now = Date.now()
+  const record = rateLimitMap.get(identifier)
+
+  // Clean up old entries periodically
+  if (rateLimitMap.size > 10000) {
+    for (const [key, value] of rateLimitMap.entries()) {
+      if (value.resetTime < now) {
+        rateLimitMap.delete(key)
+      }
+    }
+  }
+
+  if (!record || record.resetTime < now) {
+    rateLimitMap.set(identifier, { count: 1, resetTime: now + RATE_LIMIT_WINDOW })
+    return true
+  }
+
+  if (record.count >= RATE_LIMIT_MAX) {
+    return false
+  }
+
+  record.count++
+  return true
+}
 
 // HTML escape function to prevent XSS in emails
 function escapeHtml(text: string): string {
@@ -37,8 +69,13 @@ export interface ContactFormState {
 }
 
 function validateEmail(email: string): boolean {
-  const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/
-  return emailRegex.test(email)
+  // More strict email validation
+  const emailRegex = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/
+  if (!emailRegex.test(email)) return false
+  // Additional checks
+  if (email.length > 254) return false
+  if (email.includes('..')) return false
+  return true
 }
 
 function validatePhone(phone: string): boolean {
@@ -61,6 +98,19 @@ export async function submitContactForm(
   _prevState: ContactFormState,
   formData: FormData
 ): Promise<ContactFormState> {
+  // Rate limiting check
+  const headersList = await headers()
+  const ip = headersList.get('x-forwarded-for')?.split(',')[0] ||
+             headersList.get('x-real-ip') ||
+             'unknown'
+
+  if (!checkRateLimit(ip)) {
+    return {
+      success: false,
+      message: 'Te veel aanvragen. Probeer het over een uur opnieuw.',
+    }
+  }
+
   const data: ContactFormData = {
     name: formData.get('name') as string,
     email: formData.get('email') as string,
@@ -190,7 +240,13 @@ ${data.message}
         'Bedankt voor uw bericht! Wij nemen binnen 24 uur contact met u op.',
     }
   } catch (error) {
-    console.error('Contact form error:', error)
+    // Only log detailed errors in development
+    if (process.env.NODE_ENV === 'development') {
+      console.error('Contact form error:', error)
+    } else {
+      // In production, log minimal info
+      console.error('Contact form error occurred')
+    }
     return {
       success: false,
       message:
