@@ -2,6 +2,7 @@ import type { Metadata } from 'next'
 import Image from 'next/image'
 import Link from 'next/link'
 import CTASection from '@/components/CTASection'
+import Certifications from '@/components/Certifications'
 import PageHero from '@/components/PageHero'
 
 export const metadata: Metadata = {
@@ -197,12 +198,14 @@ export default function AboutPage() {
         </div>
 
         {/* Wave bottom */}
-        <div className="absolute bottom-0 left-0 right-0">
-          <svg viewBox="0 0 1440 60" className="w-full h-auto fill-white">
+        <div className="absolute bottom-0 left-0 right-0 -mb-px">
+          <svg viewBox="0 0 1440 60" preserveAspectRatio="none" className="w-full h-12 md:h-16 block fill-secondary-50">
             <path d="M0,30 C480,0 960,60 1440,30 L1440,60 L0,60 Z" />
           </svg>
         </div>
       </section>
+
+      <Certifications />
 
       <CTASection />
     </>
