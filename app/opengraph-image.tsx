@@ -10,6 +10,9 @@ export const size = {
 export const contentType = 'image/png'
 
 export default async function Image() {
+  // Fetch logo from public folder
+  const logoUrl = new URL('/images/logo.png', 'https://keizer-logistics.nl').toString()
+
   return new ImageResponse(
     (
       <div
@@ -24,38 +27,17 @@ export default async function Image() {
           padding: '60px',
         }}
       >
-        {/* Logo area */}
-        <div
+        {/* Logo */}
+        <img
+          src={logoUrl}
+          alt="Keizer Logistics"
+          width={400}
+          height={300}
           style={{
-            display: 'flex',
-            alignItems: 'center',
-            marginBottom: '40px',
+            objectFit: 'contain',
+            marginBottom: '20px',
           }}
-        >
-          <div
-            style={{
-              width: '80px',
-              height: '80px',
-              background: 'linear-gradient(135deg, #e8b95a 0%, #d4a344 100%)',
-              borderRadius: '16px',
-              display: 'flex',
-              alignItems: 'center',
-              justifyContent: 'center',
-              marginRight: '24px',
-            }}
-          >
-            <span style={{ fontSize: '48px', fontWeight: 'bold', color: '#1a1a19' }}>K</span>
-          </div>
-          <span
-            style={{
-              fontSize: '56px',
-              fontWeight: 'bold',
-              color: '#ffffff',
-            }}
-          >
-            Keizer Logistics
-          </span>
-        </div>
+        />
 
         {/* Tagline */}
         <div
