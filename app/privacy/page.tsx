@@ -4,6 +4,9 @@ import PageHero from '@/components/PageHero'
 export const metadata: Metadata = {
   title: 'Privacy',
   description: 'Privacybeleid van Keizer Logistics BV. Lees hoe wij omgaan met uw persoonsgegevens.',
+  alternates: {
+    canonical: 'https://keizer-logistics.nl/privacy',
+  },
 }
 
 export default function PrivacyPage() {

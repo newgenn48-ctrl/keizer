@@ -9,10 +9,14 @@ export const metadata: Metadata = {
   title: 'Over ons',
   description:
     'Leer Keizer Logistics BV kennen: meer dan 5 jaar ervaring in transport en logistiek. Een betrouwbare partner met een modern wagenpark en toegewijd team.',
+  alternates: {
+    canonical: 'https://keizer-logistics.nl/about',
+  },
   openGraph: {
     title: 'Over ons | Keizer Logistics BV',
     description:
       'Leer Keizer Logistics BV kennen: meer dan 5 jaar ervaring in transport en logistiek. Een betrouwbare partner met een modern wagenpark en toegewijd team.',
+    images: ['/images/keizer-hero.jpg'],
   },
 }
 

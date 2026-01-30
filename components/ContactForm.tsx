@@ -24,6 +24,18 @@ export default function ContactForm() {
 
   return (
     <form action={formAction} className="space-y-6">
+      {/* Honeypot field - hidden from users, catches bots */}
+      <div className="absolute -left-[9999px]" aria-hidden="true">
+        <label htmlFor="website">Website</label>
+        <input
+          type="text"
+          id="website"
+          name="website"
+          tabIndex={-1}
+          autoComplete="off"
+        />
+      </div>
+
       {/* Status Message */}
       {state.message && (
         <div

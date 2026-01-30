@@ -111,6 +111,16 @@ export async function submitContactForm(
     }
   }
 
+  // Honeypot check - if filled, it's a bot
+  const honeypot = formData.get('website') as string
+  if (honeypot) {
+    // Silently reject but return success to not alert bots
+    return {
+      success: true,
+      message: 'Bedankt voor uw bericht! Wij nemen binnen 24 uur contact met u op.',
+    }
+  }
+
   const data: ContactFormData = {
     name: formData.get('name') as string,
     email: formData.get('email') as string,

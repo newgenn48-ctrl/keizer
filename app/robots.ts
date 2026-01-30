@@ -6,7 +6,7 @@ export default function robots(): MetadataRoute.Robots {
       {
         userAgent: '*',
         allow: '/',
-        disallow: ['/api/', '/admin/'],
+        disallow: ['/api/', '/_next/', '/static/'],
       },
     ],
     sitemap: 'https://keizer-logistics.nl/sitemap.xml',

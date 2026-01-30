@@ -1,0 +1,7 @@
+# Security Policy for Keizer Logistics BV
+# https://securitytxt.org/
+
+Contact: mailto:info@keizer-logistics.nl
+Preferred-Languages: nl, en
+Canonical: https://keizer-logistics.nl/.well-known/security.txt
+Expires: 2027-01-30T00:00:00.000Z

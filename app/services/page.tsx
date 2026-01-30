@@ -7,10 +7,14 @@ export const metadata: Metadata = {
   title: 'Diensten',
   description:
     'Ontdek het complete dienstenpakket van Keizer Logistics BV: nationaal en internationaal transport, distributie, koeriersdiensten, spoedtransport en zakelijk maatwerk.',
+  alternates: {
+    canonical: 'https://keizer-logistics.nl/services',
+  },
   openGraph: {
     title: 'Diensten | Keizer Logistics BV',
     description:
       'Ontdek het complete dienstenpakket van Keizer Logistics BV: nationaal en internationaal transport, distributie, koeriersdiensten, spoedtransport en zakelijk maatwerk.',
+    images: ['/images/keizer-hero.jpg'],
   },
 }
 

@@ -4,6 +4,9 @@ import PageHero from '@/components/PageHero'
 export const metadata: Metadata = {
   title: 'Algemene Voorwaarden',
   description: 'Algemene voorwaarden van Keizer Logistics BV voor transport- en logistieke diensten.',
+  alternates: {
+    canonical: 'https://keizer-logistics.nl/voorwaarden',
+  },
 }
 
 export default function VoorwaardenPage() {

@@ -47,12 +47,21 @@ export const metadata: Metadata = {
     title: 'Keizer Logistics BV | Transport & Logistiek Nederland',
     description:
       'Uw betrouwbare partner voor nationaal en internationaal transport, distributie en logistieke oplossingen.',
+    images: [
+      {
+        url: '/images/keizer-hero.jpg',
+        width: 1200,
+        height: 630,
+        alt: 'Keizer Logistics BV - Transport & Logistiek',
+      },
+    ],
   },
   twitter: {
     card: 'summary_large_image',
     title: 'Keizer Logistics BV | Transport & Logistiek Nederland',
     description:
       'Uw betrouwbare partner voor nationaal en internationaal transport, distributie en logistieke oplossingen.',
+    images: ['/images/keizer-hero.jpg'],
   },
   alternates: {
     canonical: 'https://keizer-logistics.nl',
@@ -67,6 +76,12 @@ export default function RootLayout({
   return (
     <html lang="nl" data-scroll-behavior="smooth">
       <head>
+        {/* Preconnect for performance */}
+        <link rel="preconnect" href="https://www.google.com" />
+        <link rel="preconnect" href="https://maps.google.com" />
+        <link rel="dns-prefetch" href="https://www.google.com" />
+        <link rel="dns-prefetch" href="https://maps.google.com" />
+
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{

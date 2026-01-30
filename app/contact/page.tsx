@@ -6,10 +6,14 @@ export const metadata: Metadata = {
   title: 'Contact',
   description:
     'Neem contact op met Keizer Logistics BV voor al uw transport- en logistieke vragen. Vraag een vrijblijvende offerte aan of bel direct voor spoedtransport.',
+  alternates: {
+    canonical: 'https://keizer-logistics.nl/contact',
+  },
   openGraph: {
     title: 'Contact | Keizer Logistics BV',
     description:
       'Neem contact op met Keizer Logistics BV voor al uw transport- en logistieke vragen. Vraag een vrijblijvende offerte aan of bel direct voor spoedtransport.',
+    images: ['/images/keizer-hero.jpg'],
   },
 }
 

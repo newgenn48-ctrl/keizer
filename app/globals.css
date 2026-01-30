@@ -18,6 +18,21 @@
   a {
     @apply transition-all duration-300;
   }
+
+  /* Focus indicators for accessibility */
+  a:focus-visible,
+  button:focus-visible,
+  input:focus-visible,
+  select:focus-visible,
+  textarea:focus-visible {
+    @apply outline-none ring-2 ring-primary-500 ring-offset-2;
+  }
+
+  /* High contrast focus for better visibility */
+  :focus-visible {
+    outline: 2px solid var(--primary-500, #e8b95a);
+    outline-offset: 2px;
+  }
 }
 
 @layer components {
