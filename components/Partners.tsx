@@ -4,13 +4,18 @@ import Image from 'next/image'
 import { useRef, useState } from 'react'
 
 const partners = [
-  { name: 'Keizer Logistics', logo: '/images/partners/v2_Keizer Logistics.png', darkBg: false },
-  { name: 'S&F Holding', logo: '/images/partners/v3_S&F Holding.png', darkBg: false },
-  { name: 'S&F Keizer Logistics', logo: '/images/partners/v3_S&F Keizer Logistics.png', darkBg: false },
-  { name: 'Keizer Snack&Bar', logo: '/images/partners/v2_Keizer Snack&Bar.png', darkBg: false },
-  { name: 'SKR Transport', logo: '/images/partners/v2_SKR TRANSPORT.png', darkBg: false },
-  { name: 'Invicta Group BV', logo: '/images/partners/v2_INVICTA GROUP BV.png', darkBg: true },
-  { name: 'Dilan Market', logo: '/images/partners/v2_Dilan market.png', darkBg: false },
+  { name: 'Keizer Transport Holding', logo: '/images/partners/Keizer transport holding.png', darkBg: false },
+  { name: 'S&F Holding', logo: '/images/partners/S&F Holding.png', darkBg: false },
+  { name: 'S&F Keizer Logistics', logo: '/images/partners/S&F Keizer Logistics.png', darkBg: false },
+  { name: 'Keizer Snack&Bar', logo: '/images/partners/Keizer Snack&Bar.png', darkBg: false },
+  { name: 'Keizer Garage', logo: '/images/partners/Keizer Garage.png', darkBg: false },
+  { name: 'Keizer Personeel BV', logo: '/images/partners/Keizer personeel bv.png', darkBg: false },
+  { name: 'Keizer Emaar SY', logo: '/images/partners/Keizer Emaar SY.png', darkBg: false },
+  { name: 'MAE Transport BV', logo: '/images/partners/MAE Transport bv.png', darkBg: false },
+  { name: 'SKR Transport', logo: '/images/partners/SKR TRANSPORT.png', darkBg: false },
+  { name: 'Invicta Group BV', logo: '/images/partners/INVICTA GROUP BV.png', darkBg: true },
+  { name: 'Dilan Market', logo: '/images/partners/Dilan market.png', darkBg: false },
+  { name: 'Abu Dhabi', logo: '/images/partners/Abu Dhabi.png', darkBg: false },
 ]
 
 export default function Partners() {
