@@ -1,7 +1,6 @@
 import type { Metadata } from 'next'
 import ContactForm from '@/components/ContactForm'
 import PageHero from '@/components/PageHero'
-import CTASection from '@/components/CTASection'
 
 export const metadata: Metadata = {
   title: 'Contact',
@@ -249,9 +248,14 @@ export default function ContactPage() {
             </a>
           </div>
         </div>
-      </section>
 
-      <CTASection />
+        {/* Wave bottom - transition to footer */}
+        <div className="absolute bottom-0 left-0 right-0 -mb-px">
+          <svg viewBox="0 0 1440 60" preserveAspectRatio="none" className="w-full h-12 md:h-16 block fill-primary-500">
+            <path d="M0,30 C480,0 960,60 1440,30 L1440,60 L0,60 Z" />
+          </svg>
+        </div>
+      </section>
     </>
   )
 }
