@@ -4,18 +4,18 @@ import Image from 'next/image'
 import { useRef, useState } from 'react'
 
 const partners = [
-  { name: 'Keizer Transport Holding', logo: '/images/partners/Keizer transport holding.png', darkBg: false },
-  { name: 'S&F Keizer Logistics', logo: '/images/partners/S&F Keizer Logistics.png', darkBg: false },
-  { name: 'Keizer Snack&Bar', logo: '/images/partners/Keizer Snack&Bar.png', darkBg: false },
-  { name: 'Keizer Garage', logo: '/images/partners/Keizer Garage.png', darkBg: false },
-  { name: 'Keizer Personeel BV', logo: '/images/partners/Keizer personeel bv.png', darkBg: false },
-  { name: 'S&F Holding', logo: '/images/partners/S&F Holding.png', darkBg: false },
-  { name: 'Keizer Emaar SY', logo: '/images/partners/Keizer Emaar SY.png', darkBg: false },
-  { name: 'MAE Transport BV', logo: '/images/partners/MAE Transport bv.png', darkBg: false },
-  { name: 'SKR Transport', logo: '/images/partners/SKR TRANSPORT.png', darkBg: false },
-  { name: 'Invicta Group BV', logo: '/images/partners/INVICTA GROUP BV.png', darkBg: true },
-  { name: 'Dilan Market', logo: '/images/partners/Dilan market.png', darkBg: false },
-  { name: 'Abu Dhabi', logo: '/images/partners/Abu Dhabi.png', darkBg: false },
+  { name: 'Keizer Transport Holding', logo: '/images/partners/Keizer transport holding.png', darkBg: false, link: 'tel:+31684903364' },
+  { name: 'S&F Keizer Logistics', logo: '/images/partners/S&F Keizer Logistics.png', darkBg: false, link: 'tel:+31684903364' },
+  { name: 'Keizer Snack&Bar', logo: '/images/partners/Keizer Snack&Bar.png', darkBg: false, link: 'tel:+31684903364' },
+  { name: 'Keizer Garage', logo: '/images/partners/Keizer Garage.png', darkBg: false, link: 'tel:+31684903364' },
+  { name: 'Keizer Personeel BV', logo: '/images/partners/Keizer personeel bv.png', darkBg: false, link: 'tel:+31684903364' },
+  { name: 'S&F Holding', logo: '/images/partners/S&F Holding.png', darkBg: false, link: 'tel:+31684903364' },
+  { name: 'Keizer Emaar SY', logo: '/images/partners/Keizer Emaar SY.png', darkBg: false, link: 'tel:+31684903364' },
+  { name: 'MAE Transport BV', logo: '/images/partners/MAE Transport bv.png', darkBg: false, link: 'tel:+31684903364' },
+  { name: 'SKR Transport', logo: '/images/partners/SKR TRANSPORT.png', darkBg: false, link: 'tel:+31684903364' },
+  { name: 'Invicta Group BV', logo: '/images/partners/INVICTA GROUP BV.png', darkBg: true, link: 'tel:+31684903364' },
+  { name: 'Dilan Market', logo: '/images/partners/Dilan market.png', darkBg: false, link: 'https://www.google.com/maps/search/?api=1&query=Dilan+Market+Zijstraat,+Aalsmeer' },
+  { name: 'Abu Dhabi', logo: '/images/partners/Abu Dhabi.png', darkBg: false, link: 'tel:+31684903364' },
 ]
 
 export default function Partners() {
@@ -102,9 +102,13 @@ export default function Partners() {
           onTouchEnd={handleTouchEnd}
         >
           {[...partners, ...partners, ...partners, ...partners].map((partner, index) => (
-            <div
+            <a
               key={`${partner.name}-${index}`}
+              href={partner.link}
+              target={partner.link.startsWith('tel:') ? '_self' : '_blank'}
+              rel={partner.link.startsWith('tel:') ? undefined : 'noopener noreferrer'}
               className="flex-shrink-0 mx-4 sm:mx-6 md:mx-8 lg:mx-10"
+              onClick={(e) => e.stopPropagation()}
             >
               <div className={`relative w-36 h-28 sm:w-44 sm:h-32 md:w-52 md:h-40 lg:w-60 lg:h-44 rounded-2xl border-2 p-4 hover:shadow-xl hover:scale-105 transition-all duration-300 select-none group overflow-hidden ${
                   partner.darkBg
@@ -120,7 +124,7 @@ export default function Partners() {
                   draggable={false}
                 />
               </div>
-            </div>
+            </a>
           ))}
         </div>
       </div>
